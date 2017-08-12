@@ -9,8 +9,8 @@
   "scripts": {
     "setup": "yarn build:all",
     "fireserve": "firebase serve --only functions,hosting",
-    "dev": "nuxt",
-    "build:client": "cd \"app/src\" nuxt build",
+    "dev": "cd \"app/src\" && yarn nuxt",
+    "build:client": "cd \"app/src\" && yarn nuxt build",
     "build:server": "cd \"app/functions\" && yarn",
     "build:all": "yarn build:client && yarn build:server",
     "start": "nuxt start",
