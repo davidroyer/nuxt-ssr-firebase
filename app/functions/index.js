@@ -9,17 +9,12 @@ require('es6-promise/auto');
 let config = {
   dev: false,
   buildDir: 'nuxt',
-  // build: {  publicPath: 'http://localhost:5000'},
-
-
 }
-const nuxt = new Nuxt(config)
 
-// console.log(htmlTemplate);
+const nuxt = new Nuxt(config)
 
 exports.render = functions.https.onRequest((req, res) => {
 
-  // req.url = req.url || '/'
   res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
   return new Promise((resolve, reject) => {
     // ctx.res.on('close', resolve)
@@ -29,7 +24,4 @@ exports.render = functions.https.onRequest((req, res) => {
       promise.then(resolve).catch(reject)
     })
   })
-
-
-
 })
