@@ -7,10 +7,14 @@
   "repository": "",
   "dependencies": {},
   "scripts": {
+    "setup": "yarn build:all",
     "fireserve": "firebase serve --only functions,hosting",
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build:client": "cd \"app/src\" nuxt build",
+    "build:server": "cd \"app/functions\" && yarn",
+    "build:all": "yarn build:client && yarn build:server",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "firebase deploy"
   }
 }
