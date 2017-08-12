@@ -28,18 +28,11 @@ module.exports = {
   */
 
   buildDir: '../functions/nuxt',
+  // publicPath: '/'
   build: {
     /*
     ** Run ESLINT on save
     */
-
-    // babel: {
-    //   "presets": [
-    //     ["es2015", {"modules": false}],
-    //     ["stage-2"]
-    //   ],
-    //   "comments": false
-    // },
     babel: {
       presets: [
         'es2015',
