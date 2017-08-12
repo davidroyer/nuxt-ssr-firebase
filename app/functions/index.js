@@ -28,7 +28,7 @@ const htmlTemplate = fs.readFileSync(path.resolve(__dirname, './nuxt/views/app.t
 exports.render = functions.https.onRequest((req, res) => {
 
   req.url = req.url || '/'
-
+  res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
   return new Promise((resolve, reject) => {
     // ctx.res.on('close', resolve)
     // ctx.res.on('finish', resolve)

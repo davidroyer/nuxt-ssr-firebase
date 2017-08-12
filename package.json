@@ -26,6 +26,7 @@
     "eslint-plugin-standard": "^3.0.1"
   },
   "scripts": {
+    "fireserve": "firebase serve --only functions,hosting",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
