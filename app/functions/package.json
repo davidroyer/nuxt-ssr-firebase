@@ -15,7 +15,8 @@
     "debug": "^2.6.8",
     "es6-promise": "^4.1.1",
     "vue-router": "^2.7.0",
-    "clone": "^2.1.1"
+    "clone": "^2.1.1",
+    "vuetify": "^0.14.8"
   },
   "private": true
 }

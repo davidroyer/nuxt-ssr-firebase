@@ -1,13 +1,86 @@
+
 <template>
-  <div>
-    <nuxt-link to="/">Home</nuxt-link>
-    <nuxt-link to="/about">About</nuxt-link>
-    <nuxt/>
-  </div>
+  <v-app>
+    <v-navigation-drawer
+      class="pb-0"
+      persistent
+      absolute
+      height="100%"
+      clipped
+      enable-resize-watcher
+      v-model="drawer">
+      <ul>
+        <template v-for="item in menuItems">
+          <li>
+            <nuxt-link
+              class="title"
+              :key="item.route"
+              :to="item.route">
+              {{item.title}}
+            </nuxt-link>
+          </li>
+        </template>
+      </ul>
+
+      <!-- <v-list-tile
+      v-for="item in menuItems"
+      :key="item.route"
+      :href="item.route">
+        <v-list-tile-content>
+          <v-list-tile-title>
+            {{ item.title }}
+          </v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile> -->
+    </v-navigation-drawer>
+
+    <toolbar @drawerTogglerClicked="drawer = !drawer"></toolbar>
+    <main>
+      <v-container fluid>
+        <nuxt></nuxt>
+      </v-container>
+    </main>
+  </v-app>
 </template>
 
+<script>
+import Toolbar from '~/components/Toolbar.vue'
+export default {
+  components: {
+    Toolbar
+  },
+  data () {
+    return {
+      drawer: false,
+      menuItems: [
+        { route: '/', title: 'Home'},
+        { route: '/about', title: 'About'}
+      ]
+    }
+  }
+}
+</script>
 <style>
-html
+.navigation-drawer {
+  background: #f5f5f5!important;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  margin: 1em 0em;
+}
+
+a {
+  text-decoration: none;
+}
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+/*html
 {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
@@ -51,5 +124,5 @@ html
 {
   color: #fff;
   background-color: #35495e;
-}
+}*/
 </style>

@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@nuxtjs/bulma@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/bulma/-/bulma-1.0.2.tgz#16e194474d5fe4549f16289cedab43f932d48e67"
+  dependencies:
+    bulma "^0.4.3"
+
 "@nuxtjs/youch@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@nuxtjs/youch/-/youch-3.0.1.tgz#332bfea84c91c60798cbb693b5622d40ab782fb0"
@@ -1091,6 +1097,10 @@ builtin-modules@^1.0.0, builtin-modules@^1.1.1:
 builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
+
+bulma@^0.4.3:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.4.4.tgz#182a3d9fb15026b4602aa8da3cf42140bfb9bb2c"
 
 bytes@2.5.0:
   version "2.5.0"
@@ -4951,6 +4961,10 @@ vue-template-es2015-compiler@^1.5.3:
 vue@~2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.2.tgz#a9855261f191c978cc0dc1150531b8d08149b58c"
+
+vuetify@^0.14.8:
+  version "0.14.8"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-0.14.8.tgz#9f485b9a88fe348402c9cec494e279f846b6e252"
 
 vuex@^2.3.1:
   version "2.3.1"

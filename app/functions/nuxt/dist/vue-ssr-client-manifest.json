@@ -1,30 +1,30 @@
 {
   "publicPath": "/_nuxt/",
   "all": [
-    "1.nuxt.bundle.730ecd40f0bd08884d41.js.map",
-    "0.nuxt.bundle.4d23b5dce4615589e7c6.js",
-    "2.nuxt.bundle.1a86be964efe4e3b86a3.js",
-    "vendor.bundle.482593e9c203d5e29f86.js",
-    "nuxt.bundle.fa471d56727698d0e30e.js",
-    "manifest.d3e809c0179a8490444c.js",
-    "0.nuxt.bundle.4d23b5dce4615589e7c6.js.map",
-    "1.nuxt.bundle.730ecd40f0bd08884d41.js",
-    "2.nuxt.bundle.1a86be964efe4e3b86a3.js.map",
-    "vendor.bundle.482593e9c203d5e29f86.js.map",
-    "nuxt.bundle.fa471d56727698d0e30e.js.map",
-    "manifest.d3e809c0179a8490444c.js.map",
+    "1.nuxt.bundle.a382e20f25b54de3a5b2.js.map",
+    "0.nuxt.bundle.d4366a428628c09f033f.js",
+    "2.nuxt.bundle.b25926c5ace922278f1d.js",
+    "vendor.bundle.936c854108806a8e453b.js",
+    "nuxt.bundle.848cbceb457fd8bba58c.js",
+    "manifest.dc94b65be952693451f2.js",
+    "0.nuxt.bundle.d4366a428628c09f033f.js.map",
+    "1.nuxt.bundle.a382e20f25b54de3a5b2.js",
+    "2.nuxt.bundle.b25926c5ace922278f1d.js.map",
+    "vendor.bundle.936c854108806a8e453b.js.map",
+    "nuxt.bundle.848cbceb457fd8bba58c.js.map",
+    "manifest.dc94b65be952693451f2.js.map",
     "index.ssr.html",
     "index.spa.html"
   ],
   "initial": [
-    "manifest.d3e809c0179a8490444c.js",
-    "vendor.bundle.482593e9c203d5e29f86.js",
-    "nuxt.bundle.fa471d56727698d0e30e.js"
+    "manifest.dc94b65be952693451f2.js",
+    "vendor.bundle.936c854108806a8e453b.js",
+    "nuxt.bundle.848cbceb457fd8bba58c.js"
   ],
   "async": [
-    "0.nuxt.bundle.4d23b5dce4615589e7c6.js",
-    "2.nuxt.bundle.1a86be964efe4e3b86a3.js",
-    "1.nuxt.bundle.730ecd40f0bd08884d41.js"
+    "0.nuxt.bundle.d4366a428628c09f033f.js",
+    "2.nuxt.bundle.b25926c5ace922278f1d.js",
+    "1.nuxt.bundle.a382e20f25b54de3a5b2.js"
   ],
   "modules": {
     "52409420": [
@@ -227,6 +227,10 @@
       3,
       9
     ],
+    "61fe9168": [
+      3,
+      9
+    ],
     "373b693d": [
       3,
       9
@@ -323,7 +327,7 @@
       4,
       10
     ],
-    "2ea586e5": [
+    "58a85653": [
       3,
       9
     ],
@@ -579,6 +583,10 @@
       4,
       10
     ],
+    "4f954524": [
+      4,
+      10
+    ],
     "47246c38": [
       7,
       0
@@ -604,6 +612,22 @@
       6
     ],
     "99b13a3a": [
+      1,
+      6
+    ],
+    "80580d34": [
+      1,
+      6
+    ],
+    "234502fe": [
+      1,
+      6
+    ],
+    "86004af2": [
+      1,
+      6
+    ],
+    "e0dd0f78": [
       1,
       6
     ],

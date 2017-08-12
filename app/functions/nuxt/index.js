@@ -9,6 +9,7 @@ import Nuxt from './components/nuxt.vue'
 import App from './App.vue'
 import { getContext, getLocation } from './utils'
 
+import plugin0 from 'plugin0'
 
 
 // Component: <nuxt-child>
@@ -104,6 +105,7 @@ async function createApp (ssrContext) {
   }, app)
 
   
+  if (typeof plugin0 === 'function') await plugin0(ctx)
   
 
   return {
