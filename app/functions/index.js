@@ -7,20 +7,24 @@ require('es6-promise/auto');
 
 let config = {
   dev: false,
-  buildDir: 'nuxt',
+  buildDir: 'nuxt'
 }
 const nuxt = new Nuxt(config)
 
 // const handleRequest = (req, res) => {}
-function handleRequest(req, res) {
+// function handleRequest(req, res) {
+//   return new Promise((resolve, reject) => {
+//     nuxt.render(req, res, promise => {
+//       promise.then(resolve).catch(reject)
+//     })
+//   })
+// }
+
+exports.render = functions.https.onRequest((req, res) => {
+  // res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
   return new Promise((resolve, reject) => {
     nuxt.render(req, res, promise => {
       promise.then(resolve).catch(reject)
     })
   })
-}
-
-exports.render = functions.https.onRequest((req, res) => {
-  res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
-  handleRequest(req, res)
 })

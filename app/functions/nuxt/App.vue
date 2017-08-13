@@ -8,6 +8,8 @@
 <script>
 import NuxtLoading from './components/nuxt-loading.vue'
 
+import '../../src/node_modules/vuetify/dist/vuetify.min.css'
+
 
 let layouts = {
 

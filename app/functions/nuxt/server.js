@@ -9,7 +9,7 @@ import { applyAsyncData, sanitizeComponent, getMatchedComponents, getContext, mi
 const debug = require('debug')('nuxt:render')
 debug.color = 4 // force blue color
 
-const isDev = false
+const isDev = true
 
 const noopApp = () => new Vue({ render: (h) => h('div') })
 
@@ -47,16 +47,19 @@ export default async context => {
   context.next = createNext(context)
   context.beforeRenderFns = []
 
-  const { app, router } = await createApp(context)
+  const { app, router, store } = await createApp(context)
   const _app = new Vue(app)
 
+  
+  // Add store to the context
+  context.store = store
   
 
   // Add route to the context
   context.route = router.currentRoute
 
   // Nuxt object
-  context.nuxt = { layout: 'default', data: [], error: null, serverRendered: true }
+  context.nuxt = { layout: 'default', data: [], error: null, state: null, serverRendered: true }
 
   // Add meta infos
   context.meta = _app.$meta()
@@ -70,7 +73,7 @@ export default async context => {
   // Create shared ctx
   const ctx = getContext(context, app)
 
-  
+  const s = isDev && Date.now()
 
   // Resolve components
   let Components = []
@@ -86,6 +89,13 @@ export default async context => {
     throw err
   }
 
+  
+  // Dispatch store nuxtServerInit
+  if (store._actions && store._actions.nuxtServerInit) {
+    await store.dispatch('nuxtServerInit', ctx)
+  }
+  // ...If there is a redirect
+  if (context.redirected) return noopApp()
   
 
   // Call global middleware (nuxt.config.js)
@@ -140,7 +150,7 @@ export default async context => {
     isValid = Component.options.validate({
       params: context.route.params || {},
       query: context.route.query  || {},
-      
+      store: ctx.store
     })
   })
   // ...If .validate() returned false
@@ -186,7 +196,7 @@ export default async context => {
     context.nuxt.error = context.error({ statusCode: 404, message: 'This page could not be found.' })
   }
 
-  
+  if (asyncDatas.length) debug('Data fetching ' + context.url + ': ' + (Date.now() - s) + 'ms')
 
   // datas are the first row of each
   context.nuxt.data = asyncDatas.map(r => r[0] || {})
@@ -196,6 +206,9 @@ export default async context => {
     context.nuxt.error = _app.$options._nuxt.err
   }
 
+  
+  // Add the state from the vuex store
+  context.nuxt.state = store.state
   
 
   await Promise.all(context.beforeRenderFns.map((fn) => promisify(fn, { Components, nuxtState: context.nuxt })))

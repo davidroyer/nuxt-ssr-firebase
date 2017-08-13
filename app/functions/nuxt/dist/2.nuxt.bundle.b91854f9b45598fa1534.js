@@ -1,2 +1,0 @@
-webpackJsonp([2],{141:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var l=n(147),s=n(17),a=s(null,l.a,null,null,null);t.default=a.exports},147:function(e,t,n){"use strict";var l=function(){var e=this,t=e.$createElement;return(e._self._c||t)("h1",{staticClass:"display-1"},[e._v("About Page")])},s=[],a={render:l,staticRenderFns:s};t.a=a}});
-//# sourceMappingURL=2.nuxt.bundle.b91854f9b45598fa1534.js.map

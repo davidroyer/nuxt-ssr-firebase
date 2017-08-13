@@ -8,7 +8,7 @@ import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.vue'
 import App from './App.vue'
 import { getContext, getLocation } from './utils'
-
+import { createStore } from './store.js'
 import plugin0 from 'plugin0'
 
 
@@ -34,7 +34,7 @@ const defaultTransition = {"name":"page","mode":"out-in"}
 async function createApp (ssrContext) {
   const router = createRouter()
 
-  
+  const store = createStore()
 
   if (process.server && ssrContext && ssrContext.url) {
     await new Promise((resolve, reject) => {
@@ -43,13 +43,20 @@ async function createApp (ssrContext) {
   }
 
   
+  if (process.browser) {
+    // Replace store state before calling plugins
+    if (window.__NUXT__ && window.__NUXT__.state) {
+      store.replaceState(window.__NUXT__.state)
+    }
+  }
+  
 
   // Create Root instance
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
     router,
-    
+     store,
     _nuxt: {
       defaultTransition,
       transitions: [ defaultTransition ],
@@ -98,7 +105,7 @@ async function createApp (ssrContext) {
     route,
     next,
     error: app._nuxt.error.bind(app),
-    
+    store,
     req: ssrContext ? ssrContext.req : undefined,
     res: ssrContext ? ssrContext.res : undefined,
     beforeRenderFns: ssrContext ? ssrContext.beforeRenderFns : undefined
@@ -111,7 +118,7 @@ async function createApp (ssrContext) {
   return {
     app,
     router,
-    
+     store 
   }
 }
 

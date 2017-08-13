@@ -42,5 +42,6 @@ module.exports = {
     //   }
     // }
   },
-  plugins: ['~plugins/vuetify.js']
+  plugins: ['~/plugins/vuetify.js'],
+  css: ['vuetify/dist/vuetify.min.css']
 }

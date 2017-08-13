@@ -2,21 +2,22 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
-    "firebase-admin": "^5.0.1",
-    "firebase-functions": "^0.6.1",
-    "nuxt": "^1.0.0-rc3",
-    "babel-runtime": "^6.23.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
-    "vue-router": "^2.7.0",
-    "lodash": "^4.17.4",
-    "vue": "~2.4.2",
-    "vue-meta": "^1.0.5",
+    "babel-runtime": "^6.23.0",
+    "clone": "^2.1.1",
     "debug": "^2.6.8",
     "es6-promise": "^4.1.1",
+    "firebase-admin": "^5.0.1",
+    "firebase-functions": "^0.6.1",
+    "lodash": "^4.17.4",
+    "nuxt": "^1.0.0-rc3",
+    "vue": "~2.4.2",
+    "vue-meta": "^1.0.5",
     "vue-router": "^2.7.0",
-    "clone": "^2.1.1",
-    "vuetify": "^0.14.8"
+    "vue-server-renderer": "2.4.2",
+    "vuetify": "^0.14.8",
+    "vuex": "^2.3.1"
   },
   "private": true
 }
