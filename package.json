@@ -1,7 +1,7 @@
 {
   "name": "firebase-functions-nuxt-example",
   "version": "1.0.0",
-  "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
+  "description": "Host Nuxt.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
   "license": "MIT",
   "author": "David Royer",
   "repository": "",
@@ -13,14 +13,9 @@
     "build:client": "cd \"src\" && yarn nuxt build && yarn copyassets",
     "build:server": "cd \"prod/server\" && yarn",
     "build:all": "yarn build:client && yarn build:server",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "start": "cd \"src\" && yarn nuxt start",
+    "generate": "cd \"src\" && yarn nuxt generate",
     "deploy": "firebase deploy",
     "assets": "cd \"src\" && yarn copyassets"
-  },
-  "devDependencies": {
-    "cpx": "^1.5.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
   }
 }
