@@ -9,15 +9,17 @@
   "scripts": {
     "setup": "yarn build:all",
     "fireserve": "firebase serve --only functions,hosting",
-    "dev": "cd \"app/src\" && yarn nuxt",
-    "build:client": "cd \"app/src\" && yarn nuxt build",
-    "build:server": "cd \"app/functions\" && yarn",
+    "dev": "cd \"src\" && yarn nuxt",
+    "build:client": "cd \"src\" && yarn nuxt build && yarn copyassets",
+    "build:server": "cd \"server\" && yarn",
     "build:all": "yarn build:client && yarn build:server",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "copyassets": "cpx 'prod/nuxt/dist/*' prod/client/assets"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"
   }

@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _aca16602 = () => import('../../src/pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
-const _ec111b8c = () => import('../../src/pages/about.vue' /* webpackChunkName: "pages/about" */).then(m => m.default || m)
+const _753ad66d = () => import('../../src/pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _5582fba8 = () => import('../../src/pages/about.vue' /* webpackChunkName: "pages/about" */).then(m => m.default || m)
 
 
 
@@ -42,12 +42,12 @@ export function createRouter () {
     routes: [
 		{
 			path: "/",
-			component: _aca16602,
+			component: _753ad66d,
 			name: "index"
 		},
 		{
 			path: "/about",
-			component: _ec111b8c,
+			component: _5582fba8,
 			name: "about"
 		}
     ],
