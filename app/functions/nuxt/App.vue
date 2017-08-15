@@ -8,7 +8,7 @@
 <script>
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '../../src/node_modules/vuetify/dist/vuetify.min.css'
+import '../../src/assets/css/app.styl'
 
 
 let layouts = {
@@ -18,7 +18,7 @@ let layouts = {
 }
 
 export default {
-  head: {"title":"Nuxt Firebase SSR","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,500,700,700italic|Material+Icons"},{"rel":"stylesheet","href":"https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css"},{"rel":"stylesheet","href":"  https://unpkg.com/vuetify/dist/vuetify.min.css"}],"style":[],"script":[]},
+  head: {"title":"Nuxt Firebase SSR","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"stylesheet","type":"text/css","href":"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"}],"style":[],"script":[]},
   data: () => ({
     layout: null,
     layoutName: ''

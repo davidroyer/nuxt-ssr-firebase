@@ -2,12 +2,11 @@
     <v-toolbar dark class="primary">
       <v-toolbar-title class="white--text">Nuxt SSR Firebase</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-side-icon
+      <!-- <v-toolbar-side-icon
         class="hidden-sm-and-up"
         @click.native.stop="$store.commit('toggleMenuState')">
-
-        </v-toolbar-side-icon>
-      <v-toolbar-items class="hidden-xs-only">
+      </v-toolbar-side-icon> -->
+      <v-toolbar-items class="">
         <v-btn nuxt flat
           nuxt
           v-for="item in menuItems"

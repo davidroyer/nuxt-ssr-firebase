@@ -10,15 +10,15 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,500,700,700italic|Material+Icons' },
-      { rel: 'stylesheet', href: 'https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css' },
-      { rel: 'stylesheet', href: '  https://unpkg.com/vuetify/dist/vuetify.min.css' }
+      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
   loading: { color: '#3B8070' },
   buildDir: '../functions/nuxt',
   build: {
+    publicPath: '/assets/',
     vendor: ['vuetify'],
+    extractCSS: true,
     babel: {
       presets: [
         'es2015',
@@ -42,6 +42,12 @@ module.exports = {
     //   }
     // }
   },
+  modules: [
+   // Simple usage
+  //  '@nuxtjs/pwa'
+ ],
   plugins: ['~/plugins/vuetify.js'],
-  css: ['vuetify/dist/vuetify.min.css']
+  css: [
+    '~/assets/css/app.styl'
+  ],
 }

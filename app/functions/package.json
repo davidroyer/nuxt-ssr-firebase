@@ -15,9 +15,8 @@
     "vue": "~2.4.2",
     "vue-meta": "^1.0.5",
     "vue-router": "^2.7.0",
-    "vue-server-renderer": "2.4.2",
-    "vuetify": "^0.14.8",
-    "vuex": "^2.3.1"
+    "vuex": "^2.3.1",
+    "vuetify": "^0.14.8"
   },
   "private": true
 }

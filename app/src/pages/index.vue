@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <h1 class="display-1">Getting Started</h1>
     <v-stepper v-model="currentStep" dark class="mt-3">

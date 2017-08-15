@@ -1,94 +1,79 @@
 <template>
-  <v-app dark toolbar>
+  <v-app dark toolbar footer>
+    <template v-if="isMounted">
+      <v-navigation-drawer
+        persistent
+        enable-resize-watcher
+        v-model="drawer">
+        <v-list>
+          <v-list-tile
+            router
+            nuxt
+            v-for="(item, i) in items"
+            :key="i"
+            :to="item.to"
+          >
+            <v-list-tile-action>
+              <v-icon v-html="item.icon"></v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title v-text="item.title"></v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-navigation-drawer>
+    </template>
+    <v-toolbar fixed>
+      <v-btn
+        icon
+        @click.native.stop="drawer = !drawer">
+        <v-icon>menu</v-icon>
+      </v-btn>
 
-  <toolbar></toolbar>
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+
+    </v-toolbar>
     <main>
       <v-container fluid>
         <nuxt />
       </v-container>
     </main>
-    <v-navigation-drawer
-      class="pb-0"
-      persistent
-      absolute
-      height="100%"
-      clipped
-      enable-resize-watcher
-      v-model="$store.state.leftDrawerVisible"
-      >
-      <div v-for="item in menuItems">
-        <v-btn
-          flat
-          nuxt
-          :key="item.route"
-          :to="item.route">
-          {{item.title}}
-        </v-btn>
-      </div>
-      <div>
-        <v-btn
-          flat
-          nuxt
-          to="/">
-          Home
-        </v-btn>
-      </div>
-      <div>
-        <v-btn
-          flat
-          nuxt
-          to="/about">
-          About
-        </v-btn>
-      </div>
-    </v-navigation-drawer>
+    <v-footer :fixed="fixed">
+      <span>&copy; 2017</span>
+    </v-footer>
   </v-app>
 </template>
-
 <script>
-import Toolbar from '~/components/Toolbar.vue'
-
-  export default {
-    components: {
-      Toolbar
-    },
-    data () {
-      return {
-        clipped: false,
-        fixed: false,
-        items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/about' }
-        ],
-        menuItems: [
-          { route: '/', title: 'Home'},
-          { route: '/about', title: 'About'}
-        ],
-        miniVariant: false,
-        right: true,
-        rightDrawer: true,
-        title: 'Vuetify.js'
-      }
+export default {
+  components: {
+  },
+  data () {
+    return {
+      isMounted: false,
+      clipped: false,
+      drawer: true,
+      fixed: false,
+      items: [
+        { icon: 'apps', title: 'Welcome', to: '/' },
+        { icon: 'bubble_chart', title: 'About', to: '/about' }
+      ],
+      miniVariant: false,
+      right: true,
+      rightDrawer: false,
+      title: 'Vuetify.js'
     }
+  },
+  mounted () {
+    this.$vuetify.load(() => this.isMounted = true)
   }
+}
 </script>
 
 <style>
-h6 {
-  color: white;
-}
-@media (min-width: 1254px) {
-  main {
-    padding-left: 300px;
-  }
-}
 .page-enter-active, .page-leave-active {
   transition: opacity .35s ease;
 }
 .page-enter, .page-leave-active {
   opacity: 0
-}
-aside btn {
-  display: block;
 }
 </style>
