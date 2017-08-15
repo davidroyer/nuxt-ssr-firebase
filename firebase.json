@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "app/public",
+    "public": "prod/client",
     "rewrites": [
       {
         "source": "**/**",
@@ -9,6 +9,6 @@
     ]
   },
   "functions": {
-    "source": "app/functions"
+    "source": "prod"
   }
 }

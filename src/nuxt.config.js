@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   loading: { color: '#3B8070' },
-  buildDir: '../functions/nuxt',
+  buildDir: '../prod/nuxt',
   build: {
     publicPath: '/assets/',
     vendor: ['vuetify'],
