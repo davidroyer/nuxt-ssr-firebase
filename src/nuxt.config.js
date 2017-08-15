@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   loading: { color: '#3B8070' },
-  buildDir: '../prod/nuxt',
+  buildDir: '../prod/server/nuxt',
   build: {
     publicPath: '/assets/',
     vendor: ['vuetify'],
@@ -43,8 +43,11 @@ module.exports = {
     // }
   },
   modules: [
-   // Simple usage
-  //  '@nuxtjs/pwa'
+   ['@nuxtjs/pwa', {
+     workbox: {
+      swDest: '../prod/client/sw.js',
+    }
+  }]
  ],
   plugins: ['~/plugins/vuetify.js'],
   css: [

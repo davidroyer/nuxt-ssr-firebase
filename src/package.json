@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
+    "cpx": "^1.5.0",
     "es6-promise": "^4.1.1",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
@@ -35,6 +36,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "copyassets": "cpx '../prod/server/nuxt/dist/*' ../prod/client/assets"
   }
 }

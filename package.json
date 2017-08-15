@@ -11,12 +11,12 @@
     "fireserve": "firebase serve --only functions,hosting",
     "dev": "cd \"src\" && yarn nuxt",
     "build:client": "cd \"src\" && yarn nuxt build && yarn copyassets",
-    "build:server": "cd \"server\" && yarn",
+    "build:server": "cd \"prod/server\" && yarn",
     "build:all": "yarn build:client && yarn build:server",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "deploy": "firebase deploy",
-    "copyassets": "cpx 'prod/nuxt/dist/*' prod/client/assets"
+    "assets": "cd \"src\" && yarn copyassets"
   },
   "devDependencies": {
     "cpx": "^1.5.0",

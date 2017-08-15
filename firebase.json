@@ -9,6 +9,6 @@
     ]
   },
   "functions": {
-    "source": "prod"
+    "source": "prod/server"
   }
 }
