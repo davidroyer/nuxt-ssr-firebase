@@ -18,7 +18,7 @@ let layouts = {
 }
 
 export default {
-  head: {"title":"Nuxt Firebase SSR","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"},{"name":"mobile-web-app-capable","content":"yes"},{"name":"apple-mobile-web-app-status-bar-style","content":"default"},{"name":"theme-color","content":"#3B8070"},{"property":"og:type","content":"website"},{"property":"og:title","content":"firebase-functions-nuxt-example"},{"property":"og:description","content":"Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects."}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"stylesheet","type":"text/css","href":"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"},{"rel":"manifest","href":"/assets/manifest.431f607e.json"},{"rel":"shortcut icon","href":"/assets/icons/icon_16.d00bMwo0t0c.png"},{"rel":"apple-touch-icon","href":"/assets/icons/icon_152.d00bMwo0t0c.png"}],"style":[],"script":[],"htmlAttrs":{"lang":"en"}},
+  head: {"title":"Nuxt Firebase SSR","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"stylesheet","type":"text/css","href":"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"}],"style":[],"script":[]},
   data: () => ({
     layout: null,
     layoutName: ''

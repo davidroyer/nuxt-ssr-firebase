@@ -10,7 +10,6 @@ import App from './App.vue'
 import { getContext, getLocation } from './utils'
 import { createStore } from './store.js'
 import plugin0 from 'plugin0'
-import plugin1 from 'plugin1'
 
 
 // Component: <nuxt-child>
@@ -113,11 +112,8 @@ async function createApp (ssrContext) {
   }, app)
 
   
-  if (typeof plugin1 === 'function') await plugin1(ctx)
+  if (typeof plugin0 === 'function') await plugin0(ctx)
   
-  if (process.browser) { 
-    if (typeof plugin0 === 'function') await plugin0(ctx)
-  }
 
   return {
     app,

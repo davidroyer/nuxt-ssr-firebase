@@ -42,13 +42,17 @@ module.exports = {
     //   }
     // }
   },
-  modules: [
-   ['@nuxtjs/pwa', {
-     workbox: {
-      swDest: '../prod/client/sw.js',
-    }
-  }]
- ],
+  generate: {
+    dir: '../prod/client'
+  },
+  // modules: ['@nuxtjs/pwa'],
+ //  modules: [
+ //   ['@nuxtjs/pwa', {
+ //     workbox: {
+ //      swDest: '../prod/client/sw.js',
+ //    }
+ //  }]
+ // ],
   plugins: ['~/plugins/vuetify.js'],
   css: [
     '~/assets/css/app.styl'

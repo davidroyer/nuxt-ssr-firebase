@@ -1,6 +1,7 @@
 const functions = require("firebase-functions");
 const admin = require('firebase-admin');
 const { Nuxt } = require('nuxt')
+const app = require('express')()
 require('es6-promise/auto');
 
 let config = {
@@ -20,7 +21,11 @@ function handleRequest(req, res) {
   })
 }
 
-exports.render = functions.https.onRequest((req, res) => {
-  res.set('Cache-Control', 'public, max-age=300, s-maxage=300');
-  handleRequest(req, res)
-})
+app.use(handleRequest)
+
+exports.render = functions.https.onRequest(app)
+
+// exports.render = functions.https.onRequest((req, res) => {
+//   res.set('Cache-Control', 'public, max-age=300, s-maxage=300');
+//   handleRequest(req, res)
+// })

@@ -19,32 +19,32 @@ importScripts('workbox-sw.prod.v1.3.0.js');
  */
 const fileManifest = [
   {
-    "url": "/assets/0.nuxt.bundle.699c93682ec1802ae495.js",
-    "revision": "5bce649ac3f77090a893a9f8b7eb0a17"
+    "url": "/assets/0.nuxt.bundle.44f2da4b7d8f8b9fd7ec.js",
+    "revision": "840c09131c38452a351bf4eb358e2d7c"
   },
   {
-    "url": "/assets/1.nuxt.bundle.f797570262a385165ca9.js",
-    "revision": "100011168978c9e3dc87b1292579272b"
+    "url": "/assets/1.nuxt.bundle.ed39cfbe4229c007c65e.js",
+    "revision": "f9ec58f488f5d56a04cf70ce53fc819a"
   },
   {
     "url": "/assets/2.nuxt.bundle.cdc03454cf72cde68e92.js",
     "revision": "184929af2c59ff08eaa7b96b544b1354"
   },
   {
-    "url": "/assets/common.4ac6b577b13549d1074d.css",
-    "revision": "c96dfcdea2ac66f3b1c36039287745d7"
+    "url": "/assets/common.873682bcf8e453348f8e.css",
+    "revision": "446de663809ecbf5fb9760501769af5c"
   },
   {
-    "url": "/assets/manifest.224a500d8a4ea3b8da47.js",
-    "revision": "37788f6748165874986fc5b9c9ebedae"
+    "url": "/assets/manifest.cbea6f1fe32887b9393f.js",
+    "revision": "040763e215839ac9a3817806f2c19876"
   },
   {
-    "url": "/assets/nuxt.bundle.4ac6b577b13549d1074d.js",
-    "revision": "caf90c73b18085facf749638833fd3bc"
+    "url": "/assets/nuxt.bundle.873682bcf8e453348f8e.js",
+    "revision": "8acdc3a222ca1bb2b2b01284a3a679df"
   },
   {
-    "url": "/assets/vendor.bundle.337fc34c53eaca0d640a.js",
-    "revision": "ca53c0912e874a7db508c9dc20914a5e"
+    "url": "/assets/vendor.bundle.5e4c1bf3b35d974bf9c7.js",
+    "revision": "72678c2b97d6f31b790958d9548f96c9"
   }
 ];
 

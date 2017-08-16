@@ -1,40 +1,32 @@
 {
   "publicPath": "/assets/",
   "all": [
-    "common.4ac6b577b13549d1074d.css.map",
-    "0.nuxt.bundle.699c93682ec1802ae495.js",
-    "2.nuxt.bundle.cdc03454cf72cde68e92.js",
-    "vendor.bundle.337fc34c53eaca0d640a.js",
-    "nuxt.bundle.4ac6b577b13549d1074d.js",
-    "manifest.224a500d8a4ea3b8da47.js",
-    "common.4ac6b577b13549d1074d.css",
-    "0.nuxt.bundle.699c93682ec1802ae495.js.map",
-    "1.nuxt.bundle.f797570262a385165ca9.js.map",
-    "2.nuxt.bundle.cdc03454cf72cde68e92.js.map",
-    "vendor.bundle.337fc34c53eaca0d640a.js.map",
-    "nuxt.bundle.4ac6b577b13549d1074d.js.map",
-    "1.nuxt.bundle.f797570262a385165ca9.js",
-    "manifest.224a500d8a4ea3b8da47.js.map",
-    "icons/icon_16.d00bMwo0t0c.png",
-    "icons/icon_120.d00bMwo0t0c.png",
-    "icons/icon_144.d00bMwo0t0c.png",
-    "icons/icon_152.d00bMwo0t0c.png",
-    "icons/icon_192.d00bMwo0t0c.png",
-    "icons/icon_384.d00bMwo0t0c.png",
-    "icons/icon_512.d00bMwo0t0c.png",
-    "manifest.431f607e.json",
+    "1.nuxt.bundle.115b2c70f247c7f44418.js.map",
+    "0.nuxt.bundle.091be1fc55e98c0fcb4f.js",
+    "2.nuxt.bundle.b395c15483f10f2fce35.js",
+    "vendor.bundle.74c56f9cfaf8d93fbfb3.js",
+    "nuxt.bundle.62200c479ea51dfae394.js",
+    "manifest.67d0721ebc8023674611.js",
+    "common.62200c479ea51dfae394.css",
+    "0.nuxt.bundle.091be1fc55e98c0fcb4f.js.map",
+    "1.nuxt.bundle.115b2c70f247c7f44418.js",
+    "2.nuxt.bundle.b395c15483f10f2fce35.js.map",
+    "vendor.bundle.74c56f9cfaf8d93fbfb3.js.map",
+    "nuxt.bundle.62200c479ea51dfae394.js.map",
+    "common.62200c479ea51dfae394.css.map",
+    "manifest.67d0721ebc8023674611.js.map",
     "index.ssr.html",
     "index.spa.html"
   ],
   "initial": [
-    "manifest.224a500d8a4ea3b8da47.js",
-    "vendor.bundle.337fc34c53eaca0d640a.js",
-    "nuxt.bundle.4ac6b577b13549d1074d.js"
+    "manifest.67d0721ebc8023674611.js",
+    "vendor.bundle.74c56f9cfaf8d93fbfb3.js",
+    "nuxt.bundle.62200c479ea51dfae394.js"
   ],
   "async": [
-    "0.nuxt.bundle.699c93682ec1802ae495.js",
-    "2.nuxt.bundle.cdc03454cf72cde68e92.js",
-    "1.nuxt.bundle.f797570262a385165ca9.js"
+    "0.nuxt.bundle.091be1fc55e98c0fcb4f.js",
+    "2.nuxt.bundle.b395c15483f10f2fce35.js",
+    "1.nuxt.bundle.115b2c70f247c7f44418.js"
   ],
   "modules": {
     "34743616": [
@@ -225,7 +217,7 @@
       4,
       6,
       11,
-      0
+      12
     ],
     "2e99d4d9": [
       3,
@@ -315,13 +307,13 @@
       4,
       6,
       11,
-      0
+      12
     ],
     "7d56f4d2": [
       4,
       6,
       11,
-      0
+      12
     ],
     "1df17f7b": [
       3,
@@ -331,7 +323,7 @@
       4,
       6,
       11,
-      0
+      12
     ],
     "36ad6d92": [
       3,
@@ -505,13 +497,13 @@
       4,
       6,
       11,
-      0
+      12
     ],
     "1b032524": [
       4,
       6,
       11,
-      0
+      12
     ],
     "5e7ea45c": [
       3,
@@ -525,7 +517,7 @@
       4,
       6,
       11,
-      0
+      12
     ],
     "1d47a54c": [
       3,
@@ -535,37 +527,37 @@
       4,
       6,
       11,
-      0
+      12
     ],
     "43a2d027": [
       4,
       6,
       11,
-      0
+      12
     ],
     "3a08e68b": [
       4,
       6,
       11,
-      0
+      12
     ],
     "6b8c837a": [
       4,
       6,
       11,
-      0
+      12
     ],
     "55076fc8": [
       4,
       6,
       11,
-      0
+      12
     ],
     "fd0d1fe0": [
       4,
       6,
       11,
-      0
+      12
     ],
     "a12394e4": [
       3,
@@ -579,61 +571,61 @@
       4,
       6,
       11,
-      0
+      12
     ],
     "0b1b5941": [
       4,
       6,
       11,
-      0
+      12
     ],
     "b9846196": [
       4,
       6,
       11,
-      0
+      12
     ],
     "34a0790b": [
       4,
       6,
       11,
-      0
+      12
     ],
     "45cb7a5e": [
       4,
       6,
       11,
-      0
+      12
     ],
     "51c06cff": [
       4,
       6,
       11,
-      0
+      12
     ],
     "6a4172ce": [
       4,
       6,
       11,
-      0
+      12
     ],
     "3800f9fb": [
       4,
       6,
       11,
-      0
+      12
     ],
     "d8d3f89a": [
       4,
       6,
       11,
-      0
+      12
     ],
     "52236eff": [
       4,
       6,
       11,
-      0
+      12
     ],
     "474cfc8d": [
       3,
@@ -651,25 +643,19 @@
       4,
       6,
       11,
-      0
+      12
     ],
     "d93d7826": [
       4,
       6,
       11,
-      0
-    ],
-    "e977cad8": [
-      4,
-      6,
-      11,
-      0
+      12
     ],
     "64e53e12": [
       4,
       6,
       11,
-      0
+      12
     ],
     "7b4b049a": [
       3,
@@ -688,8 +674,8 @@
       9
     ],
     "947d34f0": [
-      12,
-      8
+      8,
+      0
     ],
     "23a48c62": [
       1,
@@ -712,20 +698,20 @@
       9
     ],
     "19e90cd9": [
-      12,
-      8
+      8,
+      0
     ],
     "3409b2a5": [
-      12,
-      8
+      8,
+      0
     ],
     "0d3e6114": [
-      12,
-      8
+      8,
+      0
     ],
     "613b49c4": [
-      12,
-      8
+      8,
+      0
     ]
   }
 }

@@ -37,6 +37,6 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "copyassets": "cpx '../prod/server/nuxt/dist/*' ../prod/client/assets"
+    "copyassets": "cpx '../prod/server/nuxt/dist/*' ../prod/client/assets -C"
   }
 }
