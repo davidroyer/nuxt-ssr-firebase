@@ -1,8 +1,12 @@
 const functions = require("firebase-functions");
-const admin = require('firebase-admin');
+const Admin = require('firebase-admin');
+Admin.initializeApp(functions.config().firebase);
 const { Nuxt } = require('nuxt')
 const app = require('express')()
+const cors = require('cors')
+const API_Routes = require('./apiRoutes')
 require('es6-promise/auto');
+
 
 let config = {
   dev: false,
@@ -22,6 +26,8 @@ function handleRequest(req, res) {
   })
 }
 
+app.use(cors({ origin: true }))
+app.use('/api', API_Routes)
 app.use(handleRequest)
 
 exports.render = functions.https.onRequest(app)

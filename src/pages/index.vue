@@ -31,6 +31,7 @@
 
 <script>
 export default {
+  name: 'Home',
   data() {
     return {
       currentStep: 1

@@ -79,7 +79,7 @@ export default async context => {
   let Components = []
   try {
     Components = await Promise.all(getMatchedComponents(router.match(context.url)).map(Component => {
-      if (typeof Component !== 'function' || Component.super === Vue) {
+      if (typeof Component !== 'function' || Component.cid) {
         return sanitizeComponent(Component)
       }
       return Component().then(Component => sanitizeComponent(Component))
@@ -171,7 +171,7 @@ export default async context => {
     if (Component.options.asyncData && typeof Component.options.asyncData === 'function') {
       let promise = promisify(Component.options.asyncData, ctx)
       promise.then(asyncDataResult => {
-        context.asyncData[Component.options.name] = asyncDataResult
+        context.asyncData[Component.cid] = asyncDataResult
         applyAsyncData(Component)
         return asyncDataResult
       })

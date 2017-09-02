@@ -11,17 +11,17 @@ if (process.browser) {
   }
 }
 
-export function applyAsyncData (Component, asyncData = {}) {
+export function applyAsyncData (Component, asyncData) {
   const ComponentData = Component.options.data || noopData
   // Prevent calling this method for each request on SSR context
-  if(!asyncData && Component.options.hasAsyncData) {
+  if (!asyncData && Component.options.hasAsyncData) {
     return
   }
   Component.options.hasAsyncData = true
   Component.options.data = function () {
     const data =  ComponentData.call(this)
-    if(this.$ssrContext) {
-      asyncData = this.$ssrContext.asyncData[Component.options.name]
+    if (this.$ssrContext) {
+      asyncData = this.$ssrContext.asyncData[Component.cid]
     }
     return { ...data, ...asyncData }
   }
@@ -73,15 +73,16 @@ export function getContext (context, app) {
   let ctx = {
     isServer: !!context.isServer,
     isClient: !!context.isClient,
+    isStatic: process.static,
     isDev: false,
+    isHMR: context.isHMR || false,
     app: app,
     store: context.store,
     route: (context.to ? context.to : context.route),
     payload: context.payload,
     error: context.error,
     base: '/',
-    env: {},
-    hotReload: context.hotReload || false
+    env: {}
   }
   const next = context.next
   ctx.params = ctx.route.params || {}
@@ -143,8 +144,11 @@ export function promisify (fn, context) {
 }
 
 // Imported from vue-router
-export function getLocation (base) {
+export function getLocation (base, mode) {
   var path = window.location.pathname
+  if (mode === 'hash') {
+    return window.location.hash.replace(/^#\//, '')
+  }
   if (base && path.indexOf(base) === 0) {
     path = path.slice(base.length)
   }

@@ -12,6 +12,7 @@
     "setup": "yarn build:all",
     "fireserve": "firebase serve --only functions,hosting",
     "dev": "cd \"src\" && yarn nuxt",
+    "dev-api": "yarn api & yarn dev",
     "build-client": "cd \"src\" && yarn nuxt build && yarn copyassets",
     "build-server": "cd \"prod/server\" && yarn",
     "build-all": "yarn build:client && yarn build:server",
@@ -19,6 +20,7 @@
     "generate": "cd \"src\" && yarn nuxt generate",
     "prepare-deploy": "yarn build-client && firebase deploy",
     "deploy": "firebase deploy",
-    "assets": "cd \"src\" && yarn copyassets"
+    "assets": "cd \"src\" && yarn copyassets",
+    "api": "firebase serve --only functions"
   }
 }

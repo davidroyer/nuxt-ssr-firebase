@@ -14,9 +14,6 @@ import {
   compile
 } from './utils'
 
-
-
-
 const noopData = () => { return {} }
 const noopFetch = () => {}
 
@@ -31,27 +28,7 @@ let store
 const NUXT = window.__NUXT__ || {}
 NUXT.components = window.__COMPONENTS__ || null
 
-// Setup global Vue error handler
-const defaultErrorHandler = Vue.config.errorHandler
-Vue.config.errorHandler = function (err, vm, info) {
-  err.statusCode = err.statusCode || 'Whoops!'
-  
-  // Show Nuxt Error Page
-  if(vm && vm.$root && vm.$root.$nuxt) {
-    vm.$root.$nuxt.error(err)
-  }
 
-  // Call other handler if exist
-  if (typeof defaultErrorHandler === 'function') {
-    return defaultErrorHandler(...arguments)
-  }
-
-  // Log to console (default vue behavior)
-  if (process.env.NODE_ENV !== 'production') {
-    console.warn(('Error in ' + info + ': "' + err.toString() + '"'), vm);
-  }
-  console.error(err);
-}
 
 // Create and mount App
 createApp()
@@ -73,7 +50,7 @@ function componentOption(component, key, ...args) {
 
 function mapTransitions(Components, to, from) {
   const componentTransitions = component => {
-    const transition = componentOption(component, 'transition', to, from)
+    const transition = componentOption(component, 'transition', to, from) || {}
     return (typeof transition === 'string' ? { name: transition } : transition)
   }
 
@@ -133,7 +110,7 @@ async function loadAsyncComponents (to, from, next) {
 
 // Get matched components
 function resolveComponents(router) {
-  const path = getLocation(router.options.base)
+  const path = getLocation(router.options.base, router.options.mode)
 
   return flatMapComponents(router.match(path), (Component, _, match, key, index) => {
     // If component already resolved
@@ -279,7 +256,7 @@ async function render (to, from, next) {
     await Promise.all(Components.map((Component, i) => {
       // Check if only children route changed
       Component._path = compile(to.matched[i].path)(to.params)
-      if (!this._hadError && Component._path === _lastPaths[i] && (i + 1) !== Components.length) {
+      if (!this._hadError && this._isMounted && Component._path === _lastPaths[i] && (i + 1) !== Components.length) {
         return Promise.resolve()
       }
 

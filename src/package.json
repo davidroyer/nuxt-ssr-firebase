@@ -6,7 +6,9 @@
   "author": "David Royer",
   "repository": "https://github.com/jthegedus/firebase-functions-nuxt-example.git",
   "dependencies": {
+    "@nuxtjs/axios": "^4.0.0",
     "@nuxtjs/bulma": "^1.0.2",
+    "@nuxtjs/proxy": "^1.1.1",
     "@nuxtjs/pwa": "^0.2.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-runtime": "^6.23.0",

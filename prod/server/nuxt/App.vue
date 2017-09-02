@@ -1,11 +1,12 @@
 <template>
   <div id="__nuxt">
     <nuxt-loading ref="loading"></nuxt-loading>
-    <component v-if="layout" :is="layout"></component>
+    <component v-if="layout" :is="nuxt.err ? 'nuxt' : layout"></component>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
 import '../../../src/assets/css/app.styl'
@@ -17,36 +18,62 @@ let layouts = {
 
 }
 
+let resolvedLayouts = {}
+
 export default {
   head: {"title":"Nuxt Firebase SSR","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"stylesheet","type":"text/css","href":"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"}],"style":[],"script":[]},
   data: () => ({
     layout: null,
     layoutName: ''
   }),
+  beforeCreate () {
+    Vue.util.defineReactive(this, 'nuxt', this.$options._nuxt)
+  },
+  created () {
+    // Add this.$nuxt in child instances
+    Vue.prototype.$nuxt = this
+    // add to window so we can listen when ready
+    if (typeof window !== 'undefined') {
+      window.$nuxt = this
+    }
+    // Add $nuxt.error()
+    this.error = this.nuxt.error
+  },
   
   mounted () {
     this.$loading = this.$refs.loading
-    this.$nuxt.$loading = this.$loading
+  },
+  watch: {
+    'nuxt.err': 'errorChanged'
   },
   
   methods: {
+    
+    errorChanged () {
+      if (this.nuxt.err && this.$loading) {
+        if (this.$loading.fail) this.$loading.fail()
+        if (this.$loading.finish) this.$loading.finish()
+      }
+    },
+    
     setLayout (layout) {
-      if (!layout || !layouts['_' + layout]) layout = 'default'
+      if (!layout || !resolvedLayouts['_' + layout]) layout = 'default'
       this.layoutName = layout
       let _layout = '_' + layout
-      this.layout = layouts[_layout]
+      this.layout = resolvedLayouts[_layout]
       return this.layout
     },
     loadLayout (layout) {
-      if (!layout || !layouts['_' + layout]) layout = 'default'
+      if (!layout || !(layouts['_' + layout] || resolvedLayouts['_' + layout])) layout = 'default'
       let _layout = '_' + layout
-      if (typeof layouts[_layout] !== 'function') {
-        return Promise.resolve(layouts[_layout])
+      if (resolvedLayouts[_layout]) {
+        return Promise.resolve(resolvedLayouts[_layout])
       }
       return layouts[_layout]()
       .then((Component) => {
-        layouts[_layout] = Component
-        return layouts[_layout]
+        resolvedLayouts[_layout] = Component
+        delete layouts[_layout]
+        return resolvedLayouts[_layout]
       })
       .catch((e) => {
         if (this.$nuxt) {

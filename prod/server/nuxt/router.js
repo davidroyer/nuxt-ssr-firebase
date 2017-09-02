@@ -4,7 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _753ad66d = () => import('../../../src/pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
-const _5582fba8 = () => import('../../../src/pages/about.vue' /* webpackChunkName: "pages/about" */).then(m => m.default || m)
+const _6615c8f0 = () => import('../../../src/pages/About.vue' /* webpackChunkName: "pages/About" */).then(m => m.default || m)
+const _1e1c4a4a = () => import('../../../src/pages/Admin.vue' /* webpackChunkName: "pages/Admin" */).then(m => m.default || m)
 
 
 
@@ -46,9 +47,14 @@ export function createRouter () {
 			name: "index"
 		},
 		{
-			path: "/about",
-			component: _5582fba8,
-			name: "about"
+			path: "/About",
+			component: _6615c8f0,
+			name: "About"
+		},
+		{
+			path: "/Admin",
+			component: _1e1c4a4a,
+			name: "Admin"
 		}
     ],
     fallback: false

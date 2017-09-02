@@ -2,10 +2,12 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.23.0",
     "clone": "^2.1.1",
+    "cors": "^2.8.4",
     "debug": "^2.6.8",
     "es6-promise": "^4.1.1",
     "express": "^4.15.4",

@@ -4,12 +4,12 @@
 
         <div class="row">
           <div class="column">
-            <h1>{{ error.statusCode }} </h1>
-            <h4> {{ error.message }} </h4>
-            
-            <p v-if="error.statusCode === 404 || error.statusCode === 'Whoops!'">
+            <h1>{{ statusCode }} </h1>
+            <h3> {{ message }} </h3>
+            <p v-if="statusCode === 404">
               <nuxt-link class="error-link" to="/">Back to the home page</nuxt-link>
             </p>
+            
           </div>
         </div>
 
@@ -31,11 +31,20 @@ export default {
   props: ['error'],
   head () {
     return {
-      title: this.error ? ((this.error.statusCode || 500) + ' - ' + (this.error.message || 'Nuxt Server Error')) : '500 - Nuxt Server Error',
+      title: this.statusCode + ' - ' + this.message,
       link: [
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css', type: 'text/css', media: 'all' },
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css', type: 'text/css', media: 'all' }
       ]
+    }
+  },
+  
+  computed: {
+    statusCode () {
+      return (this.error && this.error.statusCode) || 500
+    },
+    message () {
+      return this.error.message || 'Nuxt Server Error'
     }
   }
 }
@@ -61,19 +70,11 @@ export default {
   margin: 0 auto;
   max-width: 70%;
 }
-.__nuxt-error-page .error-box {
-  box-shadow: 0px 0px 9px #d3d3d3;
-  padding: 10px;
-  text-align: left;
-}
 .__nuxt-error-page .poweredby {
   text-align: center;
   margin-top: 10%;
 }
 .__nuxt-error-page a {
   color: #42b983 !important;
-}
-.__nuxt-error-page pre {
-  border-color: #42b983 !important;
 }
 </style>

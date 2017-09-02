@@ -3,21 +3,38 @@ const path = require('path')
 module.exports = {
   head: {
     title: 'Nuxt Firebase SSR',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Nuxt.js project'
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      }
     ]
   },
-  loading: { color: '#3B8070' },
+  loading: {
+    color: '#3B8070'
+  },
   buildDir: '../prod/server/nuxt',
   build: {
     publicPath: '/assets/',
-    vendor: ['vuetify'],
+    vendor: ['vuetify', 'axios'],
     extractCSS: true,
     babel: {
       presets: [
@@ -26,8 +43,8 @@ module.exports = {
       ],
       plugins: [
         ["transform-runtime", {
-            "polyfill": true,
-            "regenerator": true
+          "polyfill": true,
+          "regenerator": true
         }],
       ]
     }
@@ -42,17 +59,15 @@ module.exports = {
     //   }
     // }
   },
-  // generate: {
-  //   dir: '../prod/client'
-  // },
-  // modules: ['@nuxtjs/pwa'],
- //  modules: [
- //   ['@nuxtjs/pwa', {
- //     workbox: {
- //      swDest: '../prod/client/sw.js',
- //    }
- //  }]
- // ],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+  proxy: [
+    ['/api', {
+      target: 'http://localhost:5000/nuxtssrfire/us-central1/render'
+    }]
+  ],
   plugins: ['~/plugins/vuetify.js'],
   css: [
     '~/assets/css/app.styl'

@@ -27,11 +27,11 @@
       <v-btn icon @click.native.stop="drawer = !drawer">
         <v-icon>menu</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-toolbar-title v-text="headerTitle"></v-toolbar-title>
     </v-toolbar>
 
     <main>
-      <v-container fluid>
+      <v-container>
         <nuxt />
       </v-container>
     </main>
@@ -52,7 +52,8 @@ export default {
       fixed: false,
       navItems: [
         { icon: 'home', title: 'Welcome', to: '/' },
-        { icon: 'layers', title: 'About', to: '/about' }
+        { icon: 'layers', title: 'About', to: '/about' },
+        { icon: 'person', title: 'Admin', to: '/admin' }
       ],
       miniVariant: false,
       right: true,
@@ -62,6 +63,12 @@ export default {
   },
   mounted () {
     this.$vuetify.load(() => this.isMounted = true)
+  },
+  computed: {
+    headerTitle: function() {
+      let combinedTitle = `${this.title} - ${this.$route.name}`
+      return this.$route.name === 'index' ? this.title : combinedTitle
+    }
   }
 }
 </script>
@@ -72,5 +79,32 @@ export default {
 }
 .page-enter, .page-leave-active {
   opacity: 0
+}
+.layout {
+  /*padding: 1em 0;*/
+}
+.cotainer {
+
+}
+html {
+  font-size: 16px;
+}
+.list__tile__action .icon {
+  font-size: 28px;
+}
+@media (max-width: 700px) {
+  .container > .layout {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1023px) {
+  .container {
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.navigation-drawer .list__tile__title {
+  font-size: 1.3em;
 }
 </style>
