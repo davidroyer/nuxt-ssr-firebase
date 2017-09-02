@@ -9,30 +9,27 @@
           <v-list-tile
             router
             nuxt
-            v-for="(item, i) in items"
-            :key="i"
-            :to="item.to"
-          >
+            v-for="(navItem, index) in navItems"
+            :key="index"
+            :to="navItem.to">
             <v-list-tile-action>
-              <v-icon v-html="item.icon"></v-icon>
+              <v-icon v-html="navItem.icon"></v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title v-text="item.title"></v-list-tile-title>
+              <v-list-tile-title v-text="navItem.title"></v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
       </v-navigation-drawer>
     </template>
+
     <v-toolbar fixed>
-      <v-btn
-        icon
-        @click.native.stop="drawer = !drawer">
+      <v-btn icon @click.native.stop="drawer = !drawer">
         <v-icon>menu</v-icon>
       </v-btn>
-
       <v-toolbar-title v-text="title"></v-toolbar-title>
-
     </v-toolbar>
+
     <main>
       <v-container fluid>
         <nuxt />
@@ -51,10 +48,10 @@ export default {
     return {
       isMounted: false,
       clipped: false,
-      drawer: true,
+      drawer: false,
       fixed: false,
-      items: [
-        { icon: 'apps', title: 'Welcome', to: '/' },
+      navItems: [
+        { icon: 'home', title: 'Welcome', to: '/' },
         { icon: 'bubble_chart', title: 'About', to: '/about' }
       ],
       miniVariant: false,

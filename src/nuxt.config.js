@@ -42,9 +42,9 @@ module.exports = {
     //   }
     // }
   },
-  generate: {
-    dir: '../prod/client'
-  },
+  // generate: {
+  //   dir: '../prod/client'
+  // },
   // modules: ['@nuxtjs/pwa'],
  //  modules: [
  //   ['@nuxtjs/pwa', {
