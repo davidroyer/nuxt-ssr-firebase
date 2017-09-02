@@ -31,8 +31,3 @@ app.use('/api', API_Routes)
 app.use(handleRequest)
 
 exports.render = functions.https.onRequest(app)
-
-// exports.render = functions.https.onRequest((req, res) => {
-//   res.set('Cache-Control', 'public, max-age=300, s-maxage=300');
-//   handleRequest(req, res)
-// })
