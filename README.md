@@ -1,10 +1,11 @@
 # Nuxt.js SSR app on Cloud Functions for Firebase with Firebase Hosting
-Host a Nuxt.js SSR React app on Cloud Functions for Firebase with Firebase Hosting.
+Host a Nuxt.js SSR app on Cloud Functions for Firebase with Firebase Hosting.
 
-Here is the accompanying [Medium Post](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2)
+- Firebase Hosting as our CDN for our publicPath (See nuxt.config.js)
+- The Nuxt.js files are inside the **src** directory and we have **prod** to deploy to firebase
 
-## TLDR;
-Host your SSR Nuxt.js app on Cloud Functions enabling a low-cost, auto-scaling SSR app experience leveraging Firebase's sweet developer experience.
+Firebase [Medium Post](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2)
+
 
 Firebase Hosting can [rewrite routes to a Cloud Function](https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites) that serves our Server-side Rendered Nuxt.js app. Using a rewrite rule that catches **ALL** routes we can then host our SSR app on our Firebase Hosting URL instead of the Firebase Cloud Function URL.
 

@@ -5,7 +5,9 @@
   "license": "MIT",
   "author": "David Royer",
   "repository": "",
-  "dependencies": {},
+  "dependencies": {
+    "vuetify": "^0.15.1"
+  },
   "scripts": {
     "setup": "yarn build:all",
     "fireserve": "firebase serve --only functions,hosting",
