@@ -1,5 +1,5 @@
 <template>
-  <v-app dark toolbar footer>
+  <v-app light toolbar footer>
     <template v-if="isMounted">
       <v-navigation-drawer
         persistent
@@ -23,7 +23,7 @@
       </v-navigation-drawer>
     </template>
 
-    <v-toolbar fixed>
+    <v-toolbar fixed class="indigo" dark>
       <v-btn icon @click.native.stop="drawer = !drawer">
         <v-icon>menu</v-icon>
       </v-btn>
@@ -35,8 +35,8 @@
         <nuxt />
       </v-container>
     </main>
-    <v-footer :fixed="fixed">
-      <span>&copy; 2017</span>
+    <v-footer class="indigo">
+      <span class="white--text">&copy; 2017</span>
     </v-footer>
   </v-app>
 </template>
@@ -52,12 +52,12 @@ export default {
       fixed: false,
       navItems: [
         { icon: 'home', title: 'Welcome', to: '/' },
-        { icon: 'bubble_chart', title: 'About', to: '/about' }
+        { icon: 'layers', title: 'About', to: '/about' }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'NuxtSSRFire'
     }
   },
   mounted () {
