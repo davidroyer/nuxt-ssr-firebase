@@ -15,6 +15,7 @@
     "build-all": "yarn build:client && yarn build:server",
     "start": "cd \"src\" && yarn nuxt start",
     "generate": "cd \"src\" && yarn nuxt generate",
+    "prepare-deploy": "yarn build-client && firebase deploy",
     "deploy": "firebase deploy",
     "assets": "cd \"src\" && yarn copyassets"
   }

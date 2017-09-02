@@ -6,7 +6,7 @@
           <div class="column">
             <h1>{{ error.statusCode }} </h1>
             <h4> {{ error.message }} </h4>
-            <pre class="error-box"><code>URI: {{ $route.path }}<br>{{ error.stack }}</code></pre>
+            
             <p v-if="error.statusCode === 404 || error.statusCode === 'Whoops!'">
               <nuxt-link class="error-link" to="/">Back to the home page</nuxt-link>
             </p>

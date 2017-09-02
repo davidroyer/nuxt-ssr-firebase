@@ -1,32 +1,32 @@
 {
   "publicPath": "/assets/",
   "all": [
-    "1.nuxt.bundle.39f2ffe9fbda42421dc1.js.map",
+    "1.nuxt.bundle.f21e388224359a3825c4.js.map",
     "0.nuxt.bundle.091be1fc55e98c0fcb4f.js",
-    "2.nuxt.bundle.6f5f4b56e4edec9828cc.js",
+    "2.nuxt.bundle.401113dd7d0cf8a5e3cf.js",
     "vendor.bundle.74c56f9cfaf8d93fbfb3.js",
     "nuxt.bundle.62200c479ea51dfae394.js",
-    "manifest.cba832aac32629daed2e.js",
+    "manifest.8e46a99b33e264b3319a.js",
     "common.62200c479ea51dfae394.css",
     "0.nuxt.bundle.091be1fc55e98c0fcb4f.js.map",
-    "1.nuxt.bundle.39f2ffe9fbda42421dc1.js",
-    "2.nuxt.bundle.6f5f4b56e4edec9828cc.js.map",
+    "1.nuxt.bundle.f21e388224359a3825c4.js",
+    "2.nuxt.bundle.401113dd7d0cf8a5e3cf.js.map",
     "vendor.bundle.74c56f9cfaf8d93fbfb3.js.map",
     "nuxt.bundle.62200c479ea51dfae394.js.map",
     "common.62200c479ea51dfae394.css.map",
-    "manifest.cba832aac32629daed2e.js.map",
+    "manifest.8e46a99b33e264b3319a.js.map",
     "index.ssr.html",
     "index.spa.html"
   ],
   "initial": [
-    "manifest.cba832aac32629daed2e.js",
+    "manifest.8e46a99b33e264b3319a.js",
     "vendor.bundle.74c56f9cfaf8d93fbfb3.js",
     "nuxt.bundle.62200c479ea51dfae394.js"
   ],
   "async": [
     "0.nuxt.bundle.091be1fc55e98c0fcb4f.js",
-    "2.nuxt.bundle.6f5f4b56e4edec9828cc.js",
-    "1.nuxt.bundle.39f2ffe9fbda42421dc1.js"
+    "2.nuxt.bundle.401113dd7d0cf8a5e3cf.js",
+    "1.nuxt.bundle.f21e388224359a3825c4.js"
   ],
   "modules": {
     "34743616": [
