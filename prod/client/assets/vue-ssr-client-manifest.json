@@ -1,38 +1,38 @@
 {
   "publicPath": "/assets/",
   "all": [
-    "pages/Admin.c11b6befce75c2aa32dd.js.map",
-    "pages/Admin.c11b6befce75c2aa32dd.js",
+    "pages/Admin.e5e888aa27bb43d25fe6.js.map",
+    "pages/Admin.e5e888aa27bb43d25fe6.js",
     "layouts/default.d38129373b4e775c471c.js",
     "pages/Dialog.cd4f5cf2dc9312294379.js",
-    "pages/About.4d78b7fc1b05fd2fe8be.js",
+    "pages/about.7124ea317518df5c5e61.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.432145e7b0c74edb1326.js",
-    "manifest.031da1c1cb6b59cb777d.js",
+    "app.2237e5362abc2b45b629.js",
+    "manifest.c3b6f98af260ae74aaf6.js",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css",
     "LICENSES",
     "pages/index.330982febaa58a00db9a.js",
     "pages/index.330982febaa58a00db9a.js.map",
     "layouts/default.d38129373b4e775c471c.js.map",
     "pages/Dialog.cd4f5cf2dc9312294379.js.map",
-    "pages/About.4d78b7fc1b05fd2fe8be.js.map",
+    "pages/about.7124ea317518df5c5e61.js.map",
     "common.8e6c3f8c273f82049fab.js.map",
-    "app.432145e7b0c74edb1326.js.map",
+    "app.2237e5362abc2b45b629.js.map",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css.map",
-    "manifest.031da1c1cb6b59cb777d.js.map",
+    "manifest.c3b6f98af260ae74aaf6.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.031da1c1cb6b59cb777d.js",
+    "manifest.c3b6f98af260ae74aaf6.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.432145e7b0c74edb1326.js"
+    "app.2237e5362abc2b45b629.js"
   ],
   "async": [
-    "pages/Admin.c11b6befce75c2aa32dd.js",
+    "pages/Admin.e5e888aa27bb43d25fe6.js",
     "layouts/default.d38129373b4e775c471c.js",
     "pages/Dialog.cd4f5cf2dc9312294379.js",
-    "pages/About.4d78b7fc1b05fd2fe8be.js",
+    "pages/about.7124ea317518df5c5e61.js",
     "pages/index.330982febaa58a00db9a.js"
   ],
   "modules": {
@@ -189,10 +189,6 @@
     "106740b1": [
       5,
       15
-    ],
-    "1369fd2f": [
-      4,
-      14
     ],
     "507930e1": [
       3,
@@ -652,6 +648,14 @@
       5,
       15
     ],
+    "0e9655f0": [
+      5,
+      15
+    ],
+    "035ed791": [
+      5,
+      15
+    ],
     "2188eb98": [
       5,
       15
@@ -687,6 +691,10 @@
     "6f3e6c9e": [
       5,
       15
+    ],
+    "c8104562": [
+      4,
+      14
     ],
     "5791cd7d": [
       1,
@@ -774,15 +782,15 @@
       5,
       15
     ],
+    "38a350ce": [
+      4,
+      14
+    ],
     "5e6084f1": [
       10,
       11
     ],
     "64342bc4": [
-      5,
-      15
-    ],
-    "0e9655f0": [
       5,
       15
     ],
@@ -880,10 +888,6 @@
       10,
       11
     ],
-    "395407e2": [
-      4,
-      14
-    ],
     "d712336a": [
       5,
       15
@@ -915,10 +919,6 @@
       15
     ],
     "4da865c8": [
-      5,
-      15
-    ],
-    "035ed791": [
       5,
       15
     ],
