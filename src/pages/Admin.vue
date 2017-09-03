@@ -1,35 +1,86 @@
 <template>
   <v-layout justify-space-between>
-    <v-flex lg5>
+    <v-btn id="addPost" right top dark fab fixed class="pink" @click.stop="openPostEditor">
+      <v-icon>add</v-icon>
+    </v-btn>
+    <v-flex lg5 class="adminPosts">
+
       <v-subheader>Blog Posts</v-subheader>
       <ul class="posts">
         <template v-for="(post, key) in posts">
           <li :key="key">{{post.title}}
-            <v-btn icon class="primary--text">
+            <edit :postKey="key" :post="post"></edit>
+            <!-- <v-btn icon class="primary--text">
               <v-icon>edit</v-icon>
-            </v-btn>
+            </v-btn> -->
           </li>
         </template>
       </ul>
-      <!-- <v-btn small primary dark>Edit</v-btn> -->
     </v-flex>
-    <v-flex lg7 class="post-new">
-      <v-subheader>Add New Post</v-subheader>
-      <v-text-field
-        name="post-title"
-        label="Post Title"
-        id="post-title"
-        v-model="post.title">
-      </v-text-field>
-      <v-text-field
-        name="post-content"
-        label="Post Content"
-        id="post-content"
-        v-model="post.content"
-        multi-line>
-      </v-text-field>
-      <v-btn @click="addPost" class="secondary f-right text-xs-right">Save Post</v-btn>
-    </v-flex>
+
+    <post-editor @closeEditor="postEditorIsActive = false" :postEditorActive="postEditorIsActive"></post-editor>
+    <!-- <v-layout>
+      <v-dialog v-model="postEditorActive" fullscreen transition="dialog-bottom-transition" :overlay=false>
+        <v-card>
+          <v-toolbar dark class="primary">
+            <v-btn icon @click.native="postEditorActive = false" dark>
+              <v-icon>close</v-icon>
+            </v-btn>
+            <v-toolbar-title>Settings</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+              <v-btn dark flat @click.native="postEditorActive = false">Save</v-btn>
+            </v-toolbar-items>
+          </v-toolbar>
+          <v-list three-line subheader>
+            <v-subheader>User Controls</v-subheader>
+            <v-list-tile avatar>
+              <v-list-tile-content>
+                <v-list-tile-title>Content filtering</v-list-tile-title>
+                <v-list-tile-sub-title>Set the content filtering level to restrict appts that can be downloaded</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile avatar>
+              <v-list-tile-content>
+                <v-list-tile-title>Password</v-list-tile-title>
+                <v-list-tile-sub-title>Require password for purchase or use password to restrict purchase</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+          <v-divider></v-divider>
+          <v-list three-line subheader>
+            <v-subheader>General</v-subheader>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-checkbox></v-checkbox>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>Notifications</v-list-tile-title>
+                <v-list-tile-sub-title>Notify me about updates to apps or games that I downloaded</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-checkbox></v-checkbox>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>Sound</v-list-tile-title>
+                <v-list-tile-sub-title>Auto-update apps at any time. Data charges may apply</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile avatar>
+              <v-list-tile-action>
+                <v-checkbox></v-checkbox>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>Auto-add widgets</v-list-tile-title>
+                <v-list-tile-sub-title>Automatically add home screen widgets</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-card>
+      </v-dialog>
+    </v-layout> -->
     <v-snackbar
       :timeout="timeout"
       :top="y === 'top'"
@@ -47,7 +98,13 @@
 </template>
 
 <script>
+import PostEditor from '@/components/PostEditor'
+import Edit from '@/components/Edit'
 export default {
+  components: {
+    PostEditor,
+    Edit
+  },
   async asyncData ({app}) {
     let { data } = await app.$axios.get('/posts')
     return {
@@ -57,6 +114,7 @@ export default {
 
   data() {
     return {
+      postEditorIsActive: false,
       post: {
         title: '',
         content: ''
@@ -70,22 +128,8 @@ export default {
     }
   },
   methods: {
-    addPost() {
-      this.$axios.post('/posts', this.post)
-        .then((response) => {
-          this.showNotification = true;
-          this.clearPost()
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    clearPost() {
-      var post = this.post
-      for (var key in post) {
-        post[key] = ''
-      }
-      console.log(post);
+    openPostEditor() {
+      this.postEditorIsActive = true
     }
   }
 }
@@ -100,7 +144,7 @@ export default {
   padding-left: 12px;
 }
 .posts li {
-  max-width: 260px;
+  max-width: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,4 +170,21 @@ font-weight: 600;
     margin-top: 0;
   }
 }
+#addPost {
+  z-index: 999;
+  right: 8px;
+  top: 50px;
+}
+
+.adminPosts {
+  position: relative;
+}
+.dialog__content {
+  padding: 0 1em;
+  z-index: 9999;
+}
+.layout {
+  position: relative;
+}
+
 </style>

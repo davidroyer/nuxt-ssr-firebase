@@ -25,6 +25,10 @@ function removePost(key) {
   // return Post.once('value').then(snapshot => snapshot.val());
 }
 
+function updatePost(key, post) {
+  return Admin.database().ref('/posts').child(key).set(post)
+}
+
 function addPost(data) {
   let {title} = data
   data['slug'] = slugify(title)
@@ -49,6 +53,12 @@ router.get('/posts/:slug', function (req, res) {
 
 router.delete('/posts/:key', function (req, res) {
   removePost(req.params.key).then(response => {
+    res.status(200).json('Success');
+  });
+})
+
+router.post('/posts/:key', function (req, res) {
+  updatePost(req.params.key, req.body).then(response => {
     res.status(200).json('Success');
   });
 })

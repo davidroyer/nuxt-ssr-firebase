@@ -67,7 +67,7 @@ export default {
   computed: {
     headerTitle: function() {
       let combinedTitle = `${this.title} - ${this.$route.name}`
-      return this.$route.name === 'index' ? this.title : combinedTitle
+      return this.$route.name === 'index' ? '' : this.$route.name
     }
   }
 }
@@ -102,6 +102,14 @@ html {
     min-width: 100% !important;
     max-width: 100% !important;
   }
+}
+
+.navigation-drawer li {
+  margin: 1em 0;
+}
+
+.navigation-drawer li:fist-child {
+  margin-top: .5em;
 }
 
 .navigation-drawer .list__tile__title {
