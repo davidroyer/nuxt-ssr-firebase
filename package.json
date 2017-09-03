@@ -9,10 +9,15 @@
     "vuetify": "^0.15.1"
   },
   "scripts": {
-    "setup": "yarn build:all",
+    "setup": "yarn setup:client && yarn setup:server && yarn build && yarn setup:firebase",
+    "setup:client": "cd \"src\" && yarn",
+    "setup:server": "cd \"prod/server\" && yarn",
+    "setup:firebase": "mv .setup-firebaserc .firebaserc",
+    "setup:firebase2": "cp .firebaserc-d .firebaserc-d2",
     "fireserve": "firebase serve --only functions,hosting",
     "dev": "cd \"src\" && yarn nuxt",
-    "dev-api": "yarn api & yarn dev",
+    "dev-ssr": "yarn ssr & yarn dev",
+    "build": "cd \"src\" && yarn nuxt build && yarn copyassets",
     "build:client": "cd \"src\" && yarn nuxt build && yarn copyassets",
     "build:server": "cd \"prod/server\" && yarn",
     "build:all": "yarn build:client && yarn build:server",
@@ -21,6 +26,6 @@
     "prepare-deploy": "yarn build:client && firebase deploy",
     "deploy": "firebase deploy",
     "assets": "cd \"src\" && yarn copyassets",
-    "api": "firebase serve --only functions"
+    "ssr": "firebase serve --only functions"
   }
 }

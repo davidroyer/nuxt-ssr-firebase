@@ -2,12 +2,6 @@
 
   <div>
     <h1 class="display-1">Getting Started</h1>
-    <v-btn
-      flat
-      nuxt
-      to="/dialog">
-      Dialog
-    </v-btn>
     <v-stepper v-model="currentStep" dark class="mt-3">
       <v-stepper-header>
         <v-stepper-step step="1" :complete="currentStep > 1">Setting Up Firebase</v-stepper-step>

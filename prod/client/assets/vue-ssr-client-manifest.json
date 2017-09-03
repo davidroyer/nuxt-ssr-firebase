@@ -8,23 +8,23 @@
     "pages/about.7124ea317518df5c5e61.js",
     "common.8e6c3f8c273f82049fab.js",
     "app.2237e5362abc2b45b629.js",
-    "manifest.c3b6f98af260ae74aaf6.js",
+    "manifest.e88c0de2a001587f5fde.js",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css",
     "LICENSES",
-    "pages/index.330982febaa58a00db9a.js",
-    "pages/index.330982febaa58a00db9a.js.map",
+    "pages/index.d2130ff6d0f3b94766ba.js",
+    "pages/index.d2130ff6d0f3b94766ba.js.map",
     "layouts/default.d38129373b4e775c471c.js.map",
     "pages/Dialog.cd4f5cf2dc9312294379.js.map",
     "pages/about.7124ea317518df5c5e61.js.map",
     "common.8e6c3f8c273f82049fab.js.map",
     "app.2237e5362abc2b45b629.js.map",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css.map",
-    "manifest.c3b6f98af260ae74aaf6.js.map",
+    "manifest.e88c0de2a001587f5fde.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.c3b6f98af260ae74aaf6.js",
+    "manifest.e88c0de2a001587f5fde.js",
     "common.8e6c3f8c273f82049fab.js",
     "app.2237e5362abc2b45b629.js"
   ],
@@ -33,7 +33,7 @@
     "layouts/default.d38129373b4e775c471c.js",
     "pages/Dialog.cd4f5cf2dc9312294379.js",
     "pages/about.7124ea317518df5c5e61.js",
-    "pages/index.330982febaa58a00db9a.js"
+    "pages/index.d2130ff6d0f3b94766ba.js"
   ],
   "modules": {
     "34743616": [
