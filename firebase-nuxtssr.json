@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "public": "prod/client",
+    "rewrites": [
+      {
+        "source": "**/**",
+        "function": "render"
+      }
+    ]
+  },
+  "functions": {
+    "source": "prod/server"
+  }
+}

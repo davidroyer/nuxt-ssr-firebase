@@ -2,6 +2,8 @@
 
 prod/client
 prod/server/nuxt
+firebase.json
+.firebaserc
 
 .DS_Store
 ProjectNotes.md

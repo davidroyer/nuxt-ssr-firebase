@@ -74,7 +74,24 @@
           .catch((error) => {
             console.log(error);
           });
-      }
+      },
+      addPost() {
+        this.$axios.post('/posts', this.post)
+          .then((response) => {
+            // this.showNotification = true;
+            this.clearPost()
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
+      clearPost() {
+        var post = this.post
+        for (var key in post) {
+          post[key] = ''
+        }
+        console.log(post);
+      },
     }
   }
 </script>
