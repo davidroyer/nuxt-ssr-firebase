@@ -7,8 +7,8 @@
     "pages/Dialog.cd4f5cf2dc9312294379.js",
     "pages/about.7124ea317518df5c5e61.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.24d541398ba602ca3631.js",
-    "manifest.00d3eff554480ae8c7bb.js",
+    "app.a35152b598cd892d5d95.js",
+    "manifest.67115b79928401b16c1b.js",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css",
     "LICENSES",
     "pages/index.cd0b1d9ffdc5ed4dec94.js",
@@ -17,16 +17,16 @@
     "pages/Dialog.cd4f5cf2dc9312294379.js.map",
     "pages/about.7124ea317518df5c5e61.js.map",
     "common.8e6c3f8c273f82049fab.js.map",
-    "app.24d541398ba602ca3631.js.map",
+    "app.a35152b598cd892d5d95.js.map",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css.map",
-    "manifest.00d3eff554480ae8c7bb.js.map",
+    "manifest.67115b79928401b16c1b.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.00d3eff554480ae8c7bb.js",
+    "manifest.67115b79928401b16c1b.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.24d541398ba602ca3631.js"
+    "app.a35152b598cd892d5d95.js"
   ],
   "async": [
     "pages/Admin.07a0d4a664e63095e5c4.js",
