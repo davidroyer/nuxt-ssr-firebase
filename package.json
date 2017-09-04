@@ -9,7 +9,6 @@
     "vuetify": "^0.15.1"
   },
   "scripts": {
-    "dev-test": "cross-env HOST=0.0.0.0 PORT=3333 nuxt",
     "setup": "yarn setup:client && yarn setup:server && yarn build && yarn setup:firebase",
     "setup:client": "cd \"src\" && yarn",
     "setup:server": "cd \"prod/server\" && yarn",
@@ -22,7 +21,6 @@
     "build:client": "cd \"src\" && yarn nuxt build && yarn copyassets",
     "build:server": "cd \"prod/server\" && yarn",
     "build:all": "yarn build:client && yarn build:server",
-    "start": "cd \"src\" && yarn nuxt start",
     "generate": "cd \"src\" && yarn nuxt generate",
     "prepare-deploy": "yarn build:client && firebase deploy",
     "deploy": "firebase deploy",
