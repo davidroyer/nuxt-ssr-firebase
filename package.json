@@ -1,12 +1,13 @@
 {
   "name": "Nuxt-SSR-Firebase",
   "version": "1.0.0",
-  "description": "Host Nuxt.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
+  "description": "Host Nuxt.js SSR app on Firebase Cloud Functions with Firebase Dynamic Hosting.",
   "license": "MIT",
   "author": "David Royer",
-  "repository": "",
+  "repository": "https://github.com/davidroyer/nuxt-ssr-firebase",
   "scripts": {
     "setup": "yarn setup:client && yarn setup:server && yarn build && yarn setup:firebase",
+    "setup:test": "yarn && yarn setup:client && yarn setup:server && yarn build && yarn setup:firebase",
     "setup:client": "cd \"src\" && yarn",
     "setup:server": "cd \"prod/server\" && yarn",
     "setup:firebase": "mv .setup-firebaserc .firebaserc",

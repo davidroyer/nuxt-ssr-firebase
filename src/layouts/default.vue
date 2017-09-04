@@ -20,6 +20,11 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
+        <v-spacer></v-spacer>
+        <v-btn id="githubLink" href="https://github.com/davidroyer/nuxt-ssr-firebase" target="_blank" secondary>
+          Github Repo
+          <v-icon right>code</v-icon>
+        </v-btn>
       </v-navigation-drawer>
     </template>
 
@@ -53,8 +58,7 @@ export default {
       navItems: [
         { icon: 'home', title: 'Welcome', to: '/' },
         { icon: 'layers', title: 'About', to: '/about' },
-        { icon: 'person', title: 'Admin', to: '/admin' },
-        { icon: 'person', title: 'Admin Async', to: '/adminasync' }
+        { icon: 'person', title: 'Admin', to: '/admin' }
       ],
       miniVariant: false,
       right: true,
@@ -68,7 +72,7 @@ export default {
   computed: {
     headerTitle: function() {
       let combinedTitle = `${this.title} - ${this.$route.name}`
-      return this.$route.name === 'index' ? '' : this.$route.name
+      return this.$route.name === 'index' ? 'NuxtSSRFire' : this.$route.name
     }
   }
 }
@@ -145,5 +149,14 @@ html {
 }
 .toolbar--fixed {
   /*z-index: 0;*/
+}
+
+#githubLink {
+  margin-left: auto;
+  color: white;
+}
+
+#githubLink i {
+  color: white;
 }
 </style>
