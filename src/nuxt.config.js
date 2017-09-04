@@ -1,6 +1,5 @@
 const path = require('path')
 const {projectID} = require('../config.js')
-// process.env.NODE_ENV = 'development'
 
 module.exports = {
   head: {
