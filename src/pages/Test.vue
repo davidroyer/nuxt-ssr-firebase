@@ -6,10 +6,10 @@
     <v-flex lg5 class="adminPosts">
 
       <v-subheader>Blog Posts</v-subheader>
-      <ul class="posts">
-        <template v-for="(post, key) in posts">
-          <li :key="key">{{post.title}}
-
+      <ul class="posts" transition="slide-x-transition">
+        <template v-if="posts"v-for="(post, key) in posts">
+          <li :key="key">
+            <span class="postTitle" v-text="post.title"></span>
             <div class="postButtonGroup">
               <edit :postKey="key" :post="post"></edit>
               <v-btn outline fab small class="secondary--text" @click="deletePost(key)">
@@ -35,9 +35,10 @@ export default {
     Edit
   },
   async asyncData ({app, env}) {
-    let { data } = await app.$axios.get('/posts')
+    // let { data } = await app.$axios.get(`${env.baseURL}/posts`)
     return {
-      posts: data,
+      baseURL: env.baseURL,
+      posts: {},
       postEditorIsActive: false,
       post: {
         title: '',
@@ -49,6 +50,17 @@ export default {
     openPostEditor() {
       this.postEditorIsActive = true
     },
+    getPosts () {
+      this.$axios.get('/posts')
+        .then((response) => {
+          console.log(response);
+          this.posts = response.data
+
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     deletePost (key) {
       this.$axios.delete(`/posts/${key}`)
         .then((response) => {
@@ -59,6 +71,9 @@ export default {
           console.log(error);
         });
     }
+  },
+  mounted() {
+    this.getPosts()
   }
 }
 </script>
@@ -93,6 +108,17 @@ font-weight: 600;
   margin-top: 3em;
 }
 
+.postTitle {
+  flex: 0 1 55%;
+}
+
+.postButtonGroup {
+  flex: 0 1 115px;
+    margin-left: auto;
+    align-self: flex-end;
+    display: block;
+    text-align: right;
+}
 @media (min-width: 701px) {
   .post-new {
     margin-top: 0;

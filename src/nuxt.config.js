@@ -32,6 +32,9 @@ module.exports = {
   loading: {
     color: '#3B8070'
   },
+  env: {
+    baseURL: process.env.NODE_ENV == 'development' ? 'http://localhost:3000/api' : 'https://nuxtssrfire.firebaseapp.com/api'
+  },
   buildDir: '../prod/server/nuxt',
   build: {
     publicPath: '/assets/',

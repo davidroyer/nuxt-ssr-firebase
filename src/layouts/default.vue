@@ -53,7 +53,8 @@ export default {
       navItems: [
         { icon: 'home', title: 'Welcome', to: '/' },
         { icon: 'layers', title: 'About', to: '/about' },
-        { icon: 'person', title: 'Admin', to: '/admin' }
+        { icon: 'person', title: 'Admin', to: '/admin' },
+        { icon: 'person', title: 'Admin EnvVar', to: '/test' }
       ],
       miniVariant: false,
       right: true,

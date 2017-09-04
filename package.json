@@ -22,8 +22,7 @@
     "build:server": "cd \"prod/server\" && yarn",
     "build:all": "yarn build:client && yarn build:server",
     "generate": "cd \"src\" && yarn nuxt generate",
-    "prepare-deploy": "yarn build:client && firebase deploy",
-    "deploy": "firebase deploy",
+    "deploy": "yarn build:client && firebase deploy",
     "assets": "cd \"src\" && yarn copyassets",
     "ssr": "firebase serve --only functions"
   },
