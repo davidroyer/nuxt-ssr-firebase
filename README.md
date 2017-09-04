@@ -11,9 +11,14 @@ Host a Nuxt.js SSR app on Cloud Functions for Firebase with Firebase Hosting.
 
 ## Getting Started
 
- 1. Create a Firebase Project using the [Firebase Console](https://console.firebase.google.com).
  1. Clone or download this repo and `cd nuxt-ssr-fire`
- 2. Setup Project by using
+ 1. Create a Firebase Project using the [Firebase Console](https://console.firebase.google.com).
+ 1. Obtain the Firebase Project ID  
+ 1. Use Project ID to update the files `conig.js` and `.setup-firebaserc`
+  - `config.js` - update `projectID` accordingly
+  - `.setup-firebaserc` - update `defaultProject` accordingly
+
+ 1. Setup Project by using
  `yarn setup`. It installs dependencies, runs a build for Nuxt, and creates the .firebaserc file from .setup-firebaserc
 
 # Getting Started
