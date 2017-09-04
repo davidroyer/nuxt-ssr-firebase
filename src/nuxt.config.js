@@ -1,4 +1,5 @@
 const path = require('path')
+const {projectID} = require('../config.js')
 
 module.exports = {
   head: {
@@ -30,11 +31,6 @@ module.exports = {
   },
   loading: {
     color: '#3B8070'
-  },
-  env: {
-    baseUrl: process.env.NODE_ENV == 'development' ? 'http://localhost:5000' : 'baseurl',
-    apiUrl: process.env.NODE_ENV == 'development' ? 'http://localhost:3000/api' : 'https://nuxtssrfire.firebaseapp.com/api',
-    nodeEnv: process.env.NODE_ENV ? process.env.NODE_ENV : '??'
   },
   buildDir: '../prod/server/nuxt',
   build: {
@@ -69,12 +65,12 @@ module.exports = {
     '@nuxtjs/proxy'
   ],
   axios: {
-    baseURL: process.env.NODE_ENV == 'development' ? 'http://localhost:3000/api' : 'https://nuxtssrfire.firebaseapp.com/api',
+    baseURL: process.env.NODE_ENV == 'development' ? 'http://localhost:3000/api' : `https://${projectID}.firebaseapp.com/api`,
     browserBaseURL: '/api'
   },
   proxy: [
     ['/api', {
-      target: 'http://localhost:5000/nuxtssrfire/us-central1/render'
+      target: `http://localhost:5000/${projectID}/us-central1/render`
     }]
   ],
   plugins: ['~/plugins/vuetify.js'],
