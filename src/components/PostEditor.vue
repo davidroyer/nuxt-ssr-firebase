@@ -83,4 +83,26 @@ export default {
 .postFieldsWrapper {
   padding: 1em;
 }
+.alert {
+  max-width: 500px;
+text-align: center;
+font-size: 1.1em;
+display: block;
+}
+@media (min-width: 1024px) {
+  .dialog--fullscreen {
+    left: 300px;
+    top: 0;
+    box-shadow: none;
+    right: 0;
+    width: calc(100% - 300px);
+  }
+  .dialog__content {
+    left: 300px;
+  }
+}
+.card__title {
+  font-size: 1.25em;
+  font-weight: 500;
+}
 </style>

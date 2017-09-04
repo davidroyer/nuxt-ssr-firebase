@@ -27,25 +27,19 @@ yarn
   - `conig.js`
   - `.setup-firebaserc`
 
-1. Get everything installed and ready
+1. Get everything installed and ready. This command installs dependencies, runs a build for Nuxt, and creates the .firebaserc file from .setup-firebaserc
 ```bash
 yarn setup
 ```
-_This command installs dependencies, runs a build for Nuxt, and creates the .firebaserc file from .setup-firebaserc_
 
-1. Use Firebase local environment in combination with Nuxt to get a preview. (We'll actually be able to start adding new posts to our database via our API)
-```bash
-yarn serve
-```
-
-## Preparing for Deploy
-<!-- 1. Inside the nuxt-ssr-fire directory, run
+## Our Dev Setup
+1. Inside the nuxt-ssr-fire directory, run
 ```bash
 yarn dev
-``` -->
-1. If everything is successful, open http://localhost:5000 to view the site.
+```
+1. If everything is successful, open http://localhost:3000 to view the site.
 
-1. Go to the Admin page to see there are no Posts in the database to display
+1. Go to the Admin page to see there are no Posts to display
 
 1. Click on the Add Post Button to create and save a new post
 

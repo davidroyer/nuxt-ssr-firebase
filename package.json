@@ -10,7 +10,6 @@
     "setup:client": "cd \"src\" && yarn",
     "setup:server": "cd \"prod/server\" && yarn",
     "setup:firebase": "mv .setup-firebaserc .firebaserc",
-    "setup:firebase2": "cp .firebaserc-d .firebaserc-d2",
     "serve": "firebase serve --only functions,hosting",
     "dev": "cross-env NODE_ENV=development yarn dev-ssr",
     "dev-ssr": "yarn ssr & cd \"src\" && yarn nuxt",
