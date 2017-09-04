@@ -1,39 +1,39 @@
 {
   "publicPath": "/assets/",
   "all": [
-    "pages/Test.2b2da90002741a77f3b1.js.map",
-    "pages/Test.2b2da90002741a77f3b1.js",
+    "pages/AdminAsync.9cf4a07fe92f7756574c.js.map",
+    "pages/AdminAsync.9cf4a07fe92f7756574c.js",
     "pages/index.ba49fe4f806a423427ea.js",
-    "layouts/default.815df80c3053cc19db6a.js",
+    "layouts/default.213209efa506d8995a41.js",
     "pages/about.7124ea317518df5c5e61.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.d1a2c98945847efdd598.js",
-    "manifest.d003b9af7e1ee232ae2a.js",
+    "app.cda9ab003b539c8b3c71.js",
+    "manifest.03293e00a180ee33e26d.js",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css",
     "LICENSES",
-    "pages/Admin.d642456202ce9256b106.js",
-    "pages/Admin.d642456202ce9256b106.js.map",
+    "pages/Admin.90a6befb0cff3b4e5886.js",
+    "pages/Admin.90a6befb0cff3b4e5886.js.map",
     "pages/index.ba49fe4f806a423427ea.js.map",
-    "layouts/default.815df80c3053cc19db6a.js.map",
+    "layouts/default.213209efa506d8995a41.js.map",
     "pages/about.7124ea317518df5c5e61.js.map",
     "common.8e6c3f8c273f82049fab.js.map",
-    "app.d1a2c98945847efdd598.js.map",
+    "app.cda9ab003b539c8b3c71.js.map",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css.map",
-    "manifest.d003b9af7e1ee232ae2a.js.map",
+    "manifest.03293e00a180ee33e26d.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.d003b9af7e1ee232ae2a.js",
+    "manifest.03293e00a180ee33e26d.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.d1a2c98945847efdd598.js"
+    "app.cda9ab003b539c8b3c71.js"
   ],
   "async": [
-    "pages/Test.2b2da90002741a77f3b1.js",
+    "pages/AdminAsync.9cf4a07fe92f7756574c.js",
     "pages/index.ba49fe4f806a423427ea.js",
-    "layouts/default.815df80c3053cc19db6a.js",
+    "layouts/default.213209efa506d8995a41.js",
     "pages/about.7124ea317518df5c5e61.js",
-    "pages/Admin.d642456202ce9256b106.js"
+    "pages/Admin.90a6befb0cff3b4e5886.js"
   ],
   "modules": {
     "34743616": [
@@ -128,13 +128,17 @@
       16,
       17
     ],
-    "536dcf60": [
+    "bcb70bbe": [
       1,
       0
     ],
     "18a16dd6": [
       5,
       15
+    ],
+    "69b88a18": [
+      1,
+      0
     ],
     "0b1e29b4": [
       5,
@@ -157,6 +161,10 @@
       15
     ],
     "3ee2a62a": [
+      5,
+      15
+    ],
+    "035ed791": [
       5,
       15
     ],
@@ -284,10 +292,6 @@
       5,
       15
     ],
-    "7c4ccc54": [
-      1,
-      0
-    ],
     "7173bfb7": [
       5,
       15
@@ -317,10 +321,6 @@
     "d0d2c236": [
       5,
       15
-    ],
-    "13344c59": [
-      1,
-      0
     ],
     "49785cd6": [
       5,
@@ -407,10 +407,6 @@
     "870ab4d8": [
       5,
       15
-    ],
-    "3c1a690a": [
-      1,
-      0
     ],
     "26b50220": [
       5,
@@ -524,10 +520,6 @@
       5,
       15
     ],
-    "730becab": [
-      1,
-      0
-    ],
     "a85f3f76": [
       5,
       15
@@ -624,14 +616,6 @@
       5,
       15
     ],
-    "64342bc4": [
-      5,
-      15
-    ],
-    "035ed791": [
-      5,
-      15
-    ],
     "4f055832": [
       5,
       15
@@ -675,6 +659,14 @@
     "c8104562": [
       4,
       14
+    ],
+    "05f1de0e": [
+      1,
+      0
+    ],
+    "13c3232f": [
+      1,
+      0
     ],
     "5791cd7d": [
       10,
@@ -765,6 +757,14 @@
     "5e6084f1": [
       2,
       12
+    ],
+    "64342bc4": [
+      5,
+      15
+    ],
+    "7ba0ad3b": [
+      1,
+      0
     ],
     "0e9655f0": [
       5,

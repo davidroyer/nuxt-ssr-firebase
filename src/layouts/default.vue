@@ -54,7 +54,7 @@ export default {
         { icon: 'home', title: 'Welcome', to: '/' },
         { icon: 'layers', title: 'About', to: '/about' },
         { icon: 'person', title: 'Admin', to: '/admin' },
-        { icon: 'person', title: 'Admin EnvVar', to: '/test' }
+        { icon: 'person', title: 'Admin Async', to: '/adminasync' }
       ],
       miniVariant: false,
       right: true,
@@ -105,6 +105,9 @@ html {
   }
 }
 
+.navigation-drawer {
+  z-index: 9999 !important;
+}
 .navigation-drawer li {
   margin: 1em 0;
 }
@@ -115,5 +118,32 @@ html {
 
 .navigation-drawer .list__tile__title {
   font-size: 1.3em;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
+}
+.slide-fade-enter-active {
+  transition: all .35s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+
+.slideup-fade-enter-active {
+  transition: all .35s ease;
+}
+.slideup-fade-enter, .slideup-fade-leave-to
+/* .slideup-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+.toolbar--fixed {
+  /*z-index: 0;*/
 }
 </style>

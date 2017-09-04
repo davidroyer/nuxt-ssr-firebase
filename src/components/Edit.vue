@@ -43,6 +43,9 @@
           </v-flex>
         </v-layout>
       </v-container>
+      <v-alert secondary :value="showingAlert" transition="scale-transition">
+        Post Updated!
+      </v-alert>
     </v-card>
   </v-dialog>
 </template>
@@ -54,22 +57,30 @@
       return {
         editDialogVisibility: false,
         editedTitle: this.post.title,
-        editedContent: this.post.content
+        editedContent: this.post.content,
+        showingAlert: false
       }
     },
     methods: {
       onSaveChanges () {
-        let key = this.postKey
-        let updatedPost = this.post
+        let vm = this
+        let key = vm.postKey
+        let updatedPost = vm.post
         // console.log(key, updatePost);
         if (updatedPost.title.trim() === '' || updatedPost.content.trim() === '') {
           return
         }
-        this.$axios.post(`/posts/${key}`, updatedPost)
+        vm.$axios.post(`/posts/${key}`, updatedPost)
           .then((response) => {
-            // this.showNotification = true;
-            // this.clearPost()
-            this.editDialogVisibility = false
+            // vm.showNotification = true;
+            // vm.clearPost()
+            vm.showingAlert = true
+            setTimeout(() => {
+              console.log('ran');
+              vm.showingAlert = false
+              vm.editDialogVisibility = false
+            }, 2000);
+
           })
           .catch((error) => {
             console.log(error);
@@ -96,10 +107,16 @@
   }
 </script>
 <style>
+.alert {
+  max-width: 500px;
+text-align: center;
+font-size: 1.1em;
+display: block;
+}
 @media (min-width: 1024px) {
   .dialog--fullscreen {
     left: 300px;
-    top: 50px;
+    top: 0;
     box-shadow: none;
     right: 0;
     width: calc(100% - 300px);
