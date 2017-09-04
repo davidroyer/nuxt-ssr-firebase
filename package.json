@@ -5,16 +5,13 @@
   "license": "MIT",
   "author": "David Royer",
   "repository": "",
-  "dependencies": {
-    "vuetify": "^0.15.1"
-  },
   "scripts": {
     "setup": "yarn setup:client && yarn setup:server && yarn build && yarn setup:firebase",
     "setup:client": "cd \"src\" && yarn",
     "setup:server": "cd \"prod/server\" && yarn",
     "setup:firebase": "mv .setup-firebaserc .firebaserc",
     "setup:firebase2": "cp .firebaserc-d .firebaserc-d2",
-    "fireserve": "firebase serve --only functions,hosting",
+    "serve": "firebase serve --only functions,hosting",
     "dev": "cross-env NODE_ENV=development yarn dev-ssr",
     "dev-ssr": "yarn ssr & cd \"src\" && yarn nuxt",
     "build": "cross-env NODE_ENV=production yarn build:client",

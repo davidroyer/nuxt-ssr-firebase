@@ -1,6 +1,7 @@
-# Nuxt.js SSR app on Cloud Functions for Firebase with Firebase Hosting
-Host a Nuxt.js SSR app on Cloud Functions for Firebase with Firebase Hosting.
+# Nuxt.js + SSR + API via Firebase
+Host a Nuxt Universal app or site by combining Nuxt.js with Firebase Cloud Functions, Hosting, and Database
 
+[Live Preview](https://nuxtssrfire.firebaseapp.com)
 - Firebase Hosting as our CDN for our publicPath (See nuxt.config.js)
 - The Nuxt.js files are inside the **src** directory and we have **prod** to deploy to firebase
 
@@ -12,9 +13,10 @@ Host a Nuxt.js SSR app on Cloud Functions for Firebase with Firebase Hosting.
 - ALL commands are ran from the root directory
 
 ## Setup
-1. Clone or download this repo and
+1. Clone or download this repo run yarn inside the directory to install the cross-env dependency
 ```bash
 cd nuxt-ssr-fire
+yarn
 ```
 
 1. Create a Firebase Project using the [Firebase Console](https://console.firebase.google.com).
@@ -25,54 +27,40 @@ cd nuxt-ssr-fire
   - `conig.js`
   - `.setup-firebaserc`
 
-1. Setup Project:
+1. Get everything installed and ready
 ```bash
 yarn setup
 ```
-It installs dependencies, runs a build for Nuxt, and creates the .firebaserc file from .setup-firebaserc
+_This command installs dependencies, runs a build for Nuxt, and creates the .firebaserc file from .setup-firebaserc_
 
+1. Use Firebase local environment in combination with Nuxt to get a preview. (We'll actually be able to start adding new posts to our database via our API)
+```bash
+yarn serve
+```
 
-## Getting Started
-1. Inside the nuxt-ssr-fire directory, run
+## Preparing for Deploy
+<!-- 1. Inside the nuxt-ssr-fire directory, run
 ```bash
 yarn dev
-```
-1. If everything is successful, open http://localhost:3000 to view the site.
+``` -->
+1. If everything is successful, open http://localhost:5000 to view the site.
 
 1. Go to the Admin page to see there are no Posts in the database to display
 
-1. Click on the pink Add Post Button and click save after adding the post
+1. Click on the Add Post Button to create and save a new post
 
-## Deploying
+  **Note:** _Currently you need to reload the page to see the the new post but this will be updated soon once Vuex is added_
+
+1. ## Deploying
+We're ready to go live. It can a while to deploy sometimes but its even longer the first deploy.
 ```bash
 yarn deploy
 ```
 <br>
 <hr>
 
-
 ### Features
 - Server-side rendering with Firebase Hosting combined with Firebase Functions
 - API via Firebase Functions and Firebase database
   - *EX:* https://your-project-id.firebaseapp.com/api
 - Admin Page with ability to Add, Edit, and Remove posts
-
-
-<hr>
-## Installation
-```bash
-git clone https://github.com/jthegedus/firebase-functions-next-example
-cd firebase-functions-next-example
-yarn install
-```
-
-## Local Firebase Hosting
-```bash
-yarn serve
-```
-
-## Deploy to Firebase
-```bash
-yarn deploy
-```
-N.B.: You will need to connect the project to your Firebase project. Edit the name in .firebaserc or run `firebase init` and choose not to override any files.
