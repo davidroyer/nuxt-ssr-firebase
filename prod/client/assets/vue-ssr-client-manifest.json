@@ -1,39 +1,39 @@
 {
   "publicPath": "/assets/",
   "all": [
-    "pages/Admin.e5e888aa27bb43d25fe6.js.map",
-    "pages/Admin.e5e888aa27bb43d25fe6.js",
+    "pages/Admin.07a0d4a664e63095e5c4.js.map",
+    "pages/Admin.07a0d4a664e63095e5c4.js",
     "layouts/default.d38129373b4e775c471c.js",
     "pages/Dialog.cd4f5cf2dc9312294379.js",
     "pages/about.7124ea317518df5c5e61.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.2237e5362abc2b45b629.js",
-    "manifest.e88c0de2a001587f5fde.js",
+    "app.24d541398ba602ca3631.js",
+    "manifest.00d3eff554480ae8c7bb.js",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css",
     "LICENSES",
-    "pages/index.d2130ff6d0f3b94766ba.js",
-    "pages/index.d2130ff6d0f3b94766ba.js.map",
+    "pages/index.cd0b1d9ffdc5ed4dec94.js",
+    "pages/index.cd0b1d9ffdc5ed4dec94.js.map",
     "layouts/default.d38129373b4e775c471c.js.map",
     "pages/Dialog.cd4f5cf2dc9312294379.js.map",
     "pages/about.7124ea317518df5c5e61.js.map",
     "common.8e6c3f8c273f82049fab.js.map",
-    "app.2237e5362abc2b45b629.js.map",
+    "app.24d541398ba602ca3631.js.map",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css.map",
-    "manifest.e88c0de2a001587f5fde.js.map",
+    "manifest.00d3eff554480ae8c7bb.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.e88c0de2a001587f5fde.js",
+    "manifest.00d3eff554480ae8c7bb.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.2237e5362abc2b45b629.js"
+    "app.24d541398ba602ca3631.js"
   ],
   "async": [
-    "pages/Admin.e5e888aa27bb43d25fe6.js",
+    "pages/Admin.07a0d4a664e63095e5c4.js",
     "layouts/default.d38129373b4e775c471c.js",
     "pages/Dialog.cd4f5cf2dc9312294379.js",
     "pages/about.7124ea317518df5c5e61.js",
-    "pages/index.d2130ff6d0f3b94766ba.js"
+    "pages/index.cd0b1d9ffdc5ed4dec94.js"
   ],
   "modules": {
     "34743616": [
@@ -111,6 +111,10 @@
     "645e2f7a": [
       5,
       15
+    ],
+    "f074f0fa": [
+      10,
+      11
     ],
     "51c06cff": [
       6,
@@ -644,15 +648,15 @@
       5,
       15
     ],
-    "4f055832": [
-      5,
-      15
-    ],
-    "0e9655f0": [
+    "64342bc4": [
       5,
       15
     ],
     "035ed791": [
+      5,
+      15
+    ],
+    "4f055832": [
       5,
       15
     ],
@@ -790,7 +794,7 @@
       10,
       11
     ],
-    "64342bc4": [
+    "0e9655f0": [
       5,
       15
     ],

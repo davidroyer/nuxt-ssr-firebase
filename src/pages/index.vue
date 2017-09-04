@@ -36,6 +36,10 @@ export default {
     return {
       currentStep: 1
     }
+  },
+  asyncData ({}) {
+    return {
+    }
   }
 }
 </script>

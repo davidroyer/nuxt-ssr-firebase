@@ -105,15 +105,10 @@ export default {
     PostEditor,
     Edit
   },
-  async asyncData ({app}) {
-    let { data } = await app.$axios.get('/posts')
+  async asyncData ({app, env}) {
+    let { data } = await app.$axios.get(`/posts`)
     return {
-      posts: data
-    }
-  },
-
-  data() {
-    return {
+      posts: data,
       postEditorIsActive: false,
       post: {
         title: '',
@@ -125,6 +120,12 @@ export default {
       mode: '',
       timeout: 1500,
       text: 'New Post Added'
+    }
+  },
+
+  data() {
+    return {
+
     }
   },
   methods: {
