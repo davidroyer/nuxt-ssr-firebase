@@ -1,3 +1,3 @@
 module.exports = {
-  projectID: 'nuxtssrfire'
+  projectID: 'your-project-id'
 }

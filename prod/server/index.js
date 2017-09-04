@@ -13,9 +13,6 @@ let config = {
   buildDir: 'nuxt',
   build: {
     publicPath: '/assets/'
-  },
-  axios: {
-    baseURL: 'http://localhost:5000/api'
   }
 }
 const nuxt = new Nuxt(config)

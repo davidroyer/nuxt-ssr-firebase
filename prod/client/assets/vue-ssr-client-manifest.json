@@ -1,39 +1,39 @@
 {
   "publicPath": "/assets/",
   "all": [
-    "pages/AdminAsync.9cf4a07fe92f7756574c.js.map",
-    "pages/AdminAsync.9cf4a07fe92f7756574c.js",
+    "pages/AdminAsync.fde891561b4db45cb73c.js.map",
+    "pages/AdminAsync.fde891561b4db45cb73c.js",
     "pages/index.ba49fe4f806a423427ea.js",
     "layouts/default.213209efa506d8995a41.js",
-    "pages/about.7124ea317518df5c5e61.js",
+    "pages/About.4d78b7fc1b05fd2fe8be.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.cda9ab003b539c8b3c71.js",
-    "manifest.03293e00a180ee33e26d.js",
+    "app.67ee17092c344ec71cdb.js",
+    "manifest.f79f67298bae13d28f9d.js",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css",
     "LICENSES",
-    "pages/Admin.90a6befb0cff3b4e5886.js",
-    "pages/Admin.90a6befb0cff3b4e5886.js.map",
+    "pages/Admin.a37e030f3c3f354f9742.js",
+    "pages/Admin.a37e030f3c3f354f9742.js.map",
     "pages/index.ba49fe4f806a423427ea.js.map",
     "layouts/default.213209efa506d8995a41.js.map",
-    "pages/about.7124ea317518df5c5e61.js.map",
+    "pages/About.4d78b7fc1b05fd2fe8be.js.map",
     "common.8e6c3f8c273f82049fab.js.map",
-    "app.cda9ab003b539c8b3c71.js.map",
+    "app.67ee17092c344ec71cdb.js.map",
     "common.2ad8fa0064d5fcf555fe8621ecf14f68.css.map",
-    "manifest.03293e00a180ee33e26d.js.map",
+    "manifest.f79f67298bae13d28f9d.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.03293e00a180ee33e26d.js",
+    "manifest.f79f67298bae13d28f9d.js",
     "common.8e6c3f8c273f82049fab.js",
-    "app.cda9ab003b539c8b3c71.js"
+    "app.67ee17092c344ec71cdb.js"
   ],
   "async": [
-    "pages/AdminAsync.9cf4a07fe92f7756574c.js",
+    "pages/AdminAsync.fde891561b4db45cb73c.js",
     "pages/index.ba49fe4f806a423427ea.js",
     "layouts/default.213209efa506d8995a41.js",
-    "pages/about.7124ea317518df5c5e61.js",
-    "pages/Admin.90a6befb0cff3b4e5886.js"
+    "pages/About.4d78b7fc1b05fd2fe8be.js",
+    "pages/Admin.a37e030f3c3f354f9742.js"
   ],
   "modules": {
     "34743616": [
@@ -164,10 +164,6 @@
       5,
       15
     ],
-    "035ed791": [
-      5,
-      15
-    ],
     "10a45c9c": [
       5,
       15
@@ -193,6 +189,10 @@
     "106740b1": [
       5,
       15
+    ],
+    "1369fd2f": [
+      4,
+      14
     ],
     "ce20da44": [
       5,
@@ -656,10 +656,6 @@
       5,
       15
     ],
-    "c8104562": [
-      4,
-      14
-    ],
     "05f1de0e": [
       1,
       0
@@ -750,10 +746,6 @@
       5,
       15
     ],
-    "38a350ce": [
-      4,
-      14
-    ],
     "5e6084f1": [
       2,
       12
@@ -828,6 +820,10 @@
       16,
       17
     ],
+    "035ed791": [
+      5,
+      15
+    ],
     "9c7e6144": [
       5,
       15
@@ -863,6 +859,10 @@
     "ef940b1a": [
       2,
       12
+    ],
+    "395407e2": [
+      4,
+      14
     ],
     "d712336a": [
       5,

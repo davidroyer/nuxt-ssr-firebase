@@ -30,6 +30,7 @@
 </template>
 
 <script>
+console.log(process.env.NODE_ENV);
 import PostEditor from '@/components/PostEditor'
 import Edit from '@/components/Edit'
 export default {
@@ -38,6 +39,9 @@ export default {
     Edit
   },
   async asyncData ({app, env}) {
+    console.log(env);
+    console.log(process.env.NODE_ENV == 'development');
+
     let { data } = await app.$axios.get('/posts')
     return {
       posts: data,
