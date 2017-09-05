@@ -79,21 +79,8 @@ export default {
 </script>
 
 <style>
-.page-enter-active, .page-leave-active {
-  transition: opacity .35s ease;
-}
-.page-enter, .page-leave-active {
-  opacity: 0
-}
-.layout {
-  /*padding: 1em 0;*/
-}
-.cotainer {
 
-}
-html {
-  font-size: 16px;
-}
+
 .list__tile__action .icon {
   font-size: 28px;
 }
@@ -109,20 +96,7 @@ html {
   }
 }
 
-.navigation-drawer {
-  z-index: 9999 !important;
-}
-.navigation-drawer li {
-  margin: 1em 0;
-}
 
-.navigation-drawer li:fist-child {
-  margin-top: .5em;
-}
-
-.navigation-drawer .list__tile__title {
-  font-size: 1.3em;
-}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s
 }
@@ -137,7 +111,6 @@ html {
   transform: translateX(-30px);
   opacity: 0;
 }
-
 
 .slideup-fade-enter-active {
   transition: all .35s ease;

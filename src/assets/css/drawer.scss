@@ -1,0 +1,12 @@
+.navigation-drawer {
+  z-index: 9999 !important;
+  li {
+    margin: 1em 0;
+    &:first-child {
+      margin-top: .5em;
+    }
+  }
+  .list__tile__title {
+    font-size: 1.2em;
+  }
+}

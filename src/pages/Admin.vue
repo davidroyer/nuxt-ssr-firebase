@@ -8,25 +8,25 @@
     <v-flex lg5 class="adminPosts">
       <v-subheader>Blog Posts</v-subheader>
       <transition name="slide-fade">
-        <ul v-if="showPosts" class="posts">
-          <template  v-for="(post, key) in posts">
-            <li :key="key">
-              <span class="postTitle" v-text="post.title"></span>
-              <div class="postButtonGroup">
-                <edit :postKey="key" :post="post"></edit>
-                <v-btn outline fab small class="secondary--text" @click="deletePost(key)">
-                  <v-icon>delete</v-icon>
-                </v-btn>
-              </div>
-            </li>
-          </template>
-        </ul>
+        <transition-group v-if="showPosts" name="list-complete" tag="ul" class="posts">
+          <li
+            v-for="(post, key) in Posts"
+            :key="key"
+            class="list-complete-item"
+          >
+            <span class="postTitle" v-text="post.title"></span>
+            <div class="postButtonGroup">
+              <edit :postKey="key" :post="post"></edit>
+              <v-btn outline fab small class="secondary--text" @click="deletePost(key)">
+                <v-icon>delete</v-icon>
+              </v-btn>
+            </div>
+          </li>
+        </transition-group>
       </transition>
-
     </v-flex>
 
-    <post-editor @closeEditor="postEditorIsActive = false" :postEditorActive="postEditorIsActive"></post-editor>
-
+    <post-editor @closeEditor="$store.commit('setEditorState', false)" :postEditorActive="editorIsActive"></post-editor>
   </v-layout>
 </template>
 
@@ -39,7 +39,6 @@ export default {
     Edit
   },
   async asyncData ({app, env}) {
-    // let { data } = await app.$axios.get(`${env.baseURL}/posts`)
     return {
       baseURL: env.baseURL,
       posts: {},
@@ -51,9 +50,17 @@ export default {
       }
     }
   },
+  computed: {
+    editorIsActive () {
+      return this.$store.state.postEditorIsActive
+    },
+    Posts () {
+      return this.$store.state.posts
+    }
+  },
   methods: {
     openPostEditor() {
-      this.postEditorIsActive = true
+      this.$store.commit('setEditorState', true)
     },
     getPosts () {
       this.$axios.get('/posts')
@@ -66,14 +73,16 @@ export default {
         });
     },
     deletePost (key) {
-      this.$axios.delete(`/posts/${key}`)
-        .then((response) => {
-          console.log(this.posts);
-          console.log('Post Deleted', response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.$store.dispatch('deletePost', key)
+
+      // this.$axios.delete(`/posts/${key}`)
+      //   .then((response) => {
+      //     console.log(this.posts);
+      //     console.log('Post Deleted', response);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
     }
   },
   mounted() {

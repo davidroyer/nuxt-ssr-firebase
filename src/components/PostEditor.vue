@@ -29,12 +29,12 @@
           </v-text-field>
           <!-- <v-btn @click="addPost" class="secondary f-right text-xs-right">Save Post</v-btn> -->
         </v-flex>
+        <v-alert secondary :value="showingAlert" transition="scale-transition">
+          Post Updated!
+        </v-alert>
       </v-card>
     </v-dialog>
   </v-layout>
-
-
-
 </template>
 
 <script>
@@ -51,23 +51,24 @@ export default {
       }
     }
   },
+  computed: {
+    showingAlert() {
+      return this.$store.state.showingSuccessMessage
+    }
+  },
   methods: {
     addPost() {
-      this.$axios.post('/posts', this.post)
-        .then((response) => {
-          // this.showNotification = true;
-          this.clearPost()
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.$store.dispatch('addPost', this.post).then(() => {
+        this.clearPost()
+      })
     },
     clearPost() {
-      var post = this.post
-      for (var key in post) {
-        post[key] = ''
-      }
-      console.log(post);
+      setTimeout(() => {
+        var post = this.post
+        for (var key in post) {
+          post[key] = ''
+        }
+      }, 3500);
     },
     closeEditor() {
       this.$emit('closeEditor')
