@@ -15,6 +15,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "es6-promise": "^4.1.1",
     "nuxt": "latest",
+    "vue-picture-input": "^1.13.2",
     "vuetify": "^0.14.8"
   },
   "devDependencies": {
@@ -41,6 +42,8 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "copyassets": "cpx '../prod/server/nuxt/dist/*' ../prod/client/assets -C"
+    "copyassets": "yarn copydist && yarn copystatic",
+    "copydist": "cpx '../prod/server/nuxt/dist/*' ../prod/client/assets -C",
+    "copystatic": "cpx ' ./static/*' ../prod/client -C"
   }
 }

@@ -64,6 +64,7 @@ module.exports = {
     // }
   },
   modules: [
+    '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
@@ -76,7 +77,10 @@ module.exports = {
       target: `http://localhost:5000/${projectID}/us-central1/render`
     }]
   ],
-  plugins: ['~/plugins/vuetify.js'],
+  plugins: [
+    '~/plugins/vuetify.js',
+    // { src: '~/plugins/vue-picture-input', ssr: false }
+  ],
   css: [
     '~/assets/css/app.styl',
     '~/assets/css/main.scss'

@@ -27,6 +27,7 @@
                 multi-line
                 v-model="post.content"
                 required></v-text-field>
+                <image-uploader></image-uploader>
             </v-card-text>
           </v-flex>
         </v-layout>
@@ -51,7 +52,11 @@
 </template>
 
 <script>
+import ImageUploader from '@/components/ImageUploader'
   export default {
+    components: {
+      ImageUploader
+    },
     props: ['postKey', 'post'],
     data () {
       return {

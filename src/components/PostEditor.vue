@@ -1,33 +1,51 @@
 <template>
   <v-layout>
-    <v-dialog v-model="postEditorActive" fullscreen transition="dialog-bottom-transition" :overlay=false>
+    <v-dialog v-model="postEditorActive" hide-overlay fullscreen transition="dialog-bottom-transition">
       <v-card>
         <v-toolbar dark class="secondary">
           <v-btn icon @click.native="closeEditor" dark>
             <v-icon>close</v-icon>
           </v-btn>
-          <v-toolbar-title>New Post</v-toolbar-title>
+          <v-toolbar-title v-if="post.key">Edit Post</v-toolbar-title>
+          <v-toolbar-title v-else>New Post</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
-            <v-btn dark flat @click.native="addPost">Save</v-btn>
+            <v-btn dark flat @click.native="deletePost(post.key)">Delete</v-btn>
+          </v-toolbar-items>
+          <v-toolbar-items>
+            <v-btn v-if="post.key" dark flat @click.native="updatePost">Update</v-btn>
+            <v-btn v-else="post.key" dark flat @click.native="addPost">Save</v-btn>
           </v-toolbar-items>
         </v-toolbar>
-        <v-flex class="postFieldsWrapper">
+        <v-flex class="postFieldsWrapper" :key="post.key">
           <v-subheader>Add New Post</v-subheader>
           <v-text-field
             name="post-title"
             label="Post Title"
             id="post-title"
-            v-model="post.title">
+            :value="post.title"
+            @keyup.stop="updateField('title', $event.target.value)">
           </v-text-field>
           <v-text-field
             name="post-content"
             label="Post Content"
             id="post-content"
-            v-model="post.content"
-            multi-line>
+            :value="post.content"
+            multi-line
+            @keyup.stop="updateField('content', $event.target.value)">>
           </v-text-field>
-          <!-- <v-btn @click="addPost" class="secondary f-right text-xs-right">Save Post</v-btn> -->
+
+          <div v-if="post.image" class="imageWrapper">
+            <img width="400px;" :src="post.image" alt="">
+            <image-uploader>
+              <template slot="text">Change Image</template>
+            </image-uploader>
+          </div>
+
+          <image-uploader v-else>
+            <template slot="text">Upload Image</template>
+          </image-uploader>
+
         </v-flex>
         <v-alert secondary :value="showingAlert" transition="scale-transition">
           Post Updated!
@@ -38,29 +56,53 @@
 </template>
 
 <script>
+import ImageUploader from '@/components/ImageUploader'
 export default {
+  components: {
+    ImageUploader
+  },
   name: 'Post-Editor',
   props: [
     'postEditorActive'
   ],
-  data() {
+  data () {
     return {
-      post: {
-        title: '',
-        content: ''
-      }
-    }
+      post: this.$store.state.post
+    };
   },
   computed: {
     showingAlert() {
       return this.$store.state.showingSuccessMessage
+    },
+    postTest () {
+      return this.$store.state.post
+    }
+  },
+  watch: {
+    postEditorActive: function (newState) {
+      if (newState === true) {
+        this.post = this.$store.state.post
+      }
     }
   },
   methods: {
-    addPost() {
-      this.$store.dispatch('addPost', this.post).then(() => {
-        this.clearPost()
+    handleUpload(name, files) {
+      let file = files[0]
+      this.$store.dispatch('uploadPhoto', file)
+    },
+    updateField (field, value) {
+      this.$store.commit('updateActivePost', {
+      	[field]: value
       })
+    },
+    addPost() {
+      this.$store.dispatch('addPost', this.post)
+    },
+    updatePost() {
+      this.$store.dispatch('updatePost', this.post)
+    },
+    deletePost (key) {
+      this.$store.dispatch('deletePost', key)
     },
     clearPost() {
       setTimeout(() => {
@@ -70,6 +112,7 @@ export default {
         }
       }, 3500);
     },
+
     closeEditor() {
       this.$emit('closeEditor')
     }
@@ -77,7 +120,29 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+.imageWrapper {
+  position: relative;
+    display: flex;
+    width: 300px;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: auto;
+    flex-grow: 0;
+    max-width: 100%;
+    align-items: center;
+    align-content: center;
+
+    img {
+      max-width: 100%
+    }
+    .uploaderButton {
+      @media (min-width: 760px) {
+        position: absolute;
+        bottom: 20px;
+      }
+    }
+}
 .dialog__content {
   /*z-index: 9999;*/
 }
@@ -89,6 +154,10 @@ export default {
 text-align: center;
 font-size: 1.1em;
 display: block;
+}
+
+.dialog--fullscreen {
+  overflow-y: scroll;
 }
 @media (min-width: 1024px) {
   .dialog--fullscreen {

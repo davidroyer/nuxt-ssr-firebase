@@ -16,7 +16,9 @@
           >
             <span class="postTitle" v-text="post.title"></span>
             <div class="postButtonGroup">
-              <edit :postKey="key" :post="post"></edit>
+              <v-btn outline fab small class="secondary--text" @click.stop="openPostEditor(post)">
+                <v-icon>edit</v-icon>
+              </v-btn>
               <v-btn outline fab small class="secondary--text" @click="deletePost(key)">
                 <v-icon>delete</v-icon>
               </v-btn>
@@ -44,10 +46,6 @@ export default {
       posts: {},
       postEditorIsActive: false,
       showPosts: false,
-      post: {
-        title: '',
-        content: ''
-      }
     }
   },
   computed: {
@@ -59,9 +57,11 @@ export default {
     }
   },
   methods: {
-    openPostEditor() {
+    openPostEditor(post) {
+      this.$store.commit('setPost', post)
       this.$store.commit('setEditorState', true)
     },
+
     getPosts () {
       this.$axios.get('/posts')
         .then(({data}) => {
@@ -74,15 +74,6 @@ export default {
     },
     deletePost (key) {
       this.$store.dispatch('deletePost', key)
-
-      // this.$axios.delete(`/posts/${key}`)
-      //   .then((response) => {
-      //     console.log(this.posts);
-      //     console.log('Post Deleted', response);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
     }
   },
   mounted() {

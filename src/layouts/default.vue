@@ -1,5 +1,5 @@
 <template>
-  <v-app light toolbar footer>
+  <v-app light toolbar footer :class="{ activeEditor: $store.state.postEditorIsActive }">
     <template v-if="isMounted">
       <v-navigation-drawer
         persistent
@@ -28,7 +28,7 @@
       </v-navigation-drawer>
     </template>
 
-    <v-toolbar fixed class="indigo" dark>
+    <v-toolbar fixed class="blue-grey darken-4" dark>
       <v-btn icon @click.native.stop="drawer = !drawer">
         <v-icon>menu</v-icon>
       </v-btn>
@@ -40,7 +40,7 @@
         <nuxt />
       </v-container>
     </main>
-    <v-footer class="indigo">
+    <v-footer class="blue-grey darken-4">
       <span class="white--text">&copy; 2017</span>
     </v-footer>
   </v-app>

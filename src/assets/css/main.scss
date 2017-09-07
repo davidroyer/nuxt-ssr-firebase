@@ -1,6 +1,9 @@
 html {
   font-size: 16px;
 }
-
+div#app.activeEditor {
+    overflow: hidden;
+}
 @import "transitions";
 @import "drawer";
+@import "post-editor";

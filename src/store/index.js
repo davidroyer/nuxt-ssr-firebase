@@ -5,8 +5,10 @@ const createStore = () => {
     state: {
       leftDrawerVisible: true,
       post: {
+        key: '',
         title: '',
-        content: ''
+        content: '',
+        image: ''
       },
       posts: [],
       postEditorIsActive: false,
@@ -17,20 +19,28 @@ const createStore = () => {
       toggleMenuState (state) {
         state.leftDrawerVisible = !state.leftDrawerVisible
       },
+      updateActivePost: function (state, post) {
+        Object.assign(state.post, post);
+      },
+      setPost: (state, post) => {
+        state.post = post
+      },
       setPosts: (state, posts) => {
         state.posts = posts
+      },
+      resetPost: (state, posts) => {
+        state.post = {
+          key: '',
+          title: '',
+          content: '',
+          image: ''
+        }
       },
       setEditorState(state, newState) {
         state.postEditorIsActive = newState
       },
       setMessageState(state, newState) {
         state.showingSuccessMessage = newState
-      },
-      removePost(state, key) {
-        console.log(key);
-        let posts = state.posts
-        // post[key] = null
-        state.posts.$remove(key)
       }
     },
     actions: {
@@ -48,8 +58,9 @@ const createStore = () => {
         return new Promise((resolve, reject) => {
           this.$axios.post('/posts', post)
             .then((response) => {
-              commit('setMessageState', true)
               dispatch('getPosts')
+              commit('setMessageState', true)
+              commit('resetPost')
                 setTimeout(() => {
                   commit('setMessageState', false)
                   commit('setEditorState', false)
@@ -61,11 +72,46 @@ const createStore = () => {
           resolve()
         })
       },
+
       deletePost ({commit, dispatch}, key) {
         this.$axios.delete(`/posts/${key}`)
           .then((response) => {
+            commit('setMessageState', true)
             dispatch('getPosts')
-            console.log('Post Deleted', response);
+              setTimeout(() => {
+                commit('setMessageState', false)
+                commit('setEditorState', false)
+            }, 1500);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
+
+      updatePost ({commit, dispatch}, post) {
+        this.$axios.post(`/posts/${post.key}`, post)
+          .then((response) => {
+            commit('setMessageState', true)
+            // dispatch('getPosts')
+              setTimeout(() => {
+                commit('setMessageState', false)
+                commit('setEditorState', false)
+            }, 1500);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
+
+      uploadPhoto ({commit}, file) {
+        var formData = new FormData();
+        formData.append('imageUpload', file)
+
+        this.$axios.post('/upload', formData)
+          .then(({data}) => {
+            commit('updateActivePost', {
+            	['image']: data.imageUrl
+            })
           })
           .catch((error) => {
             console.log(error);
