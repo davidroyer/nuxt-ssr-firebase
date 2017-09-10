@@ -1,14 +1,14 @@
 <template>
   <v-layout justify-space-between>
-    <transition name="slideup-fade" appear>
-      <v-btn v-if="showPosts" id="addPost" right top dark fab fixed class="pink" @click.stop="openPostEditor">
+
+      <v-btn id="addPost" right top dark fab fixed class="pink" @click.stop="addPost">
         <v-icon>add</v-icon>
       </v-btn>
-    </transition>
+
     <v-flex lg5 class="adminPosts">
       <v-subheader>Blog Posts</v-subheader>
-      <transition name="slide-fade">
-        <transition-group v-if="showPosts" name="list-complete" tag="ul" class="posts">
+      <!-- <transition name="slide-fade" appear> -->
+        <transition-group  name="list-complete" tag="ul" class="posts">
           <li
             v-for="(post, key) in Posts"
             :key="key"
@@ -16,16 +16,16 @@
           >
             <span class="postTitle" v-text="post.title"></span>
             <div class="postButtonGroup">
-              <v-btn outline fab small class="secondary--text" @click.stop="openPostEditor(post)">
+              <v-btn outline fab small class="secondary--text" @click.stop="editPost(post)">
                 <v-icon>edit</v-icon>
               </v-btn>
-              <v-btn outline fab small class="secondary--text" @click="deletePost(key)">
+              <v-btn outline fab small class="secondary--text" @click="deletePost(post)">
                 <v-icon>delete</v-icon>
               </v-btn>
             </div>
           </li>
         </transition-group>
-      </transition>
+      <!-- </transition> -->
     </v-flex>
 
     <post-editor @closeEditor="$store.commit('setEditorState', false)" :postEditorActive="editorIsActive"></post-editor>
@@ -34,11 +34,9 @@
 
 <script>
 import PostEditor from '@/components/PostEditor'
-import Edit from '@/components/Edit'
 export default {
   components: {
-    PostEditor,
-    Edit
+    PostEditor
   },
   async asyncData ({app, env}) {
     return {
@@ -57,11 +55,14 @@ export default {
     }
   },
   methods: {
-    openPostEditor(post) {
+    addPost () {
+      // this.$store.commit('setPost', post)
+      this.$store.commit('setEditorState', true)
+    },
+    editPost (post) {
       this.$store.commit('setPost', post)
       this.$store.commit('setEditorState', true)
     },
-
     getPosts () {
       this.$axios.get('/posts')
         .then(({data}) => {
@@ -72,8 +73,8 @@ export default {
           console.log(error);
         });
     },
-    deletePost (key) {
-      this.$store.dispatch('deletePost', key)
+    deletePost (post) {
+      this.$store.dispatch('deletePost', post)
     }
   },
   mounted() {

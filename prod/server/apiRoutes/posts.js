@@ -6,6 +6,7 @@ var express = require('express')
 var router = express.Router()
 const Admin = require('firebase-admin');
 const Posts = Admin.database().ref('/posts')
+const PostList = Admin.database().ref('/postlist')
 const fileUpload = require('express-fileupload');
 const bucket = gcs.bucket(BucketName);
 
@@ -26,6 +27,21 @@ function slugify(title) {
   return slug
 }
 
+function handlePostUpdates(key, post) {
+  var updates = {};
+  updates[`/posts/${key}`] = post;
+  updates[`/postlist/${post.slug}`] = post;
+  return updates
+}
+
+function handleRemovePost(key, post) {
+  var updates = {};
+  console.log('REMOVE', post);
+  updates[`/posts/${key}`] = null;
+  updates[`/postlist/${post.slug}`] = null;
+  return updates
+}
+
 function getPublicUrl (filename) {
   return `https://storage.googleapis.com/${BucketName}/${filename}`;
 }
@@ -36,16 +52,23 @@ function getPosts() {
 
 function getPost(slug) {
   let Post = Admin.database().ref('/posts').orderByChild('slug').equalTo(slug)
-  return Post.once('value').then(snapshot => snapshot.val());
+
+  return Post.once('value')
+  .then((snapshot) => {
+    var postData = snapshot.val()
+    var keys = Object.keys(postData)
+    return postData[keys[0]]
+  });
 }
 
-function removePost(key) {
-  return Admin.database().ref('/posts').child(key).remove()
-  // return Post.once('value').then(snapshot => snapshot.val());
+function removePost(key, post) {
+  let postUpdates = handleRemovePost(key, post)
+  return Admin.database().ref().update(postUpdates);
 }
 
 function updatePost(key, post) {
-  return Admin.database().ref('/posts').child(key).update(post)
+  let postUpdates = handlePostUpdates(key, post)
+  return Admin.database().ref().update(postUpdates);
 }
 
 function handleUpload() {
@@ -53,13 +76,11 @@ function handleUpload() {
   console.log(sampleFile);
 }
 
-function addPost(data) {
-  let { title } = data
+function addPost(postData) {
   let postKey = Posts.push().key
-
-  data['slug'] = slugify(title)
-  data['key'] = postKey
-  return Posts.child(postKey).update(data)
+  postData['slug'] = slugify(postData.title)
+  postData['key'] = postKey
+  return Admin.database().ref().update(handlePostUpdates(postKey, postData));
 }
 
 router.get('/', function(req, res) {
@@ -79,7 +100,8 @@ router.get('/posts/:slug', function(req, res) {
 })
 
 router.delete('/posts/:key', function(req, res) {
-  removePost(req.params.key).then(response => {
+  console.log('BODY', req.body);
+  removePost(req.params.key, req.body).then(response => {
     res.status(200).json('Success');
   });
 })
@@ -99,9 +121,6 @@ router.post('/posts', function(req, res) {
 router.post('/upload',  upload.single("imageUpload"), function(req, res, next) {
   // Create a new blob in the bucket and upload the file data.
   const blob = bucket.file(req.file.originalname);
-  console.log(blob);
-  // Make sure to set the contentType metadata for the browser to be able
-  // to render the image instead of downloading the file (default behavior)
   const blobStream = blob.createWriteStream({
     metadata: {
       contentType: req.file.mimetype

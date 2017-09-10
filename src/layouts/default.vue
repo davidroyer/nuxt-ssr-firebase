@@ -58,12 +58,13 @@ export default {
       navItems: [
         { icon: 'home', title: 'Welcome', to: '/' },
         { icon: 'layers', title: 'About', to: '/about' },
-        { icon: 'person', title: 'Admin', to: '/admin' }
+        { icon: 'person', title: 'Admin', to: '/admin' },
+        { icon: 'library_books', title: 'Blog', to: '/blog' }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'NuxtSSRFire'
+      title: 'NuxtFire'
     }
   },
   mounted () {
@@ -71,14 +72,15 @@ export default {
   },
   computed: {
     headerTitle: function() {
-      let combinedTitle = `${this.title} - ${this.$route.name}`
-      return this.$route.name === 'index' ? 'NuxtSSRFire' : this.$route.name
+      return 'NuxtFire'
+      // let combinedTitle = `${this.title} - ${this.$route.name}`
+      // return this.$route.name === 'index' ? 'NuxtFire' : this.$route.name
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 
 
 .list__tile__action .icon {
@@ -127,6 +129,7 @@ export default {
 #githubLink {
   margin-left: auto;
   color: white;
+  background: #263238!important;
 }
 
 #githubLink i {

@@ -11,6 +11,7 @@ const createStore = () => {
         image: ''
       },
       posts: [],
+      currentPost: null,
       postEditorIsActive: false,
       showingSuccessMessage: false,
     },
@@ -24,6 +25,10 @@ const createStore = () => {
       },
       setPost: (state, post) => {
         state.post = post
+      },
+      setCurrentPost: (state, post) => {
+        console.log('setCurrentPost', post);
+        state.currentPost = post
       },
       setPosts: (state, posts) => {
         state.posts = posts
@@ -43,6 +48,11 @@ const createStore = () => {
         state.showingSuccessMessage = newState
       }
     },
+    getters: {
+      // getPostBySlug: (state, getters) => (slug) => {
+      //   return state.posts.find(post => post.slug === slug)
+      // }
+    },
     actions: {
       async nuxtServerInit ({ commit }, { app }) {
         const data = await app.$axios.$get('posts')
@@ -54,7 +64,14 @@ const createStore = () => {
         commit('setPosts', data)
       },
 
+      async getPost ({commit}, slug) {
+        const data = await this.$axios.$get(`/posts/${slug}`)
+        console.log('STORE', data);
+        commit('setCurrentPost', data)
+      },
+
       addPost ({commit, dispatch}, post) {
+        console.log('STORE: ', post);
         return new Promise((resolve, reject) => {
           this.$axios.post('/posts', post)
             .then((response) => {
@@ -73,8 +90,8 @@ const createStore = () => {
         })
       },
 
-      deletePost ({commit, dispatch}, key) {
-        this.$axios.delete(`/posts/${key}`)
+      deletePost ({commit, dispatch}, post) {
+        this.$axios.delete(`/posts/${post.key}`, post)
           .then((response) => {
             commit('setMessageState', true)
             dispatch('getPosts')
@@ -93,6 +110,7 @@ const createStore = () => {
           .then((response) => {
             commit('setMessageState', true)
             // dispatch('getPosts')
+            commit('resetPost')
               setTimeout(() => {
                 commit('setMessageState', false)
                 commit('setEditorState', false)

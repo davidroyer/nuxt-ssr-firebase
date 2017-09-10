@@ -9,13 +9,15 @@
           <v-toolbar-title v-if="post.key">Edit Post</v-toolbar-title>
           <v-toolbar-title v-else>New Post</v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-toolbar-items>
-            <v-btn dark flat @click.native="deletePost(post.key)">Delete</v-btn>
-          </v-toolbar-items>
-          <v-toolbar-items>
-            <v-btn v-if="post.key" dark flat @click.native="updatePost">Update</v-btn>
-            <v-btn v-else="post.key" dark flat @click.native="addPost">Save</v-btn>
-          </v-toolbar-items>
+            <v-btn icon @click="deletePost(post)">
+              <v-icon>delete</v-icon>
+            </v-btn>
+            <v-btn icon v-if="post.key" dark @click.native="updatePost">
+              <v-icon>save</v-icon>
+            </v-btn>
+            <v-btn icon v-else="post.key" @click.native="addPost">
+              <v-icon>save</v-icon>
+            </v-btn>
         </v-toolbar>
         <v-flex class="postFieldsWrapper" :key="post.key">
           <v-subheader>Add New Post</v-subheader>
@@ -32,7 +34,7 @@
             id="post-content"
             :value="post.content"
             multi-line
-            @keyup.stop="updateField('content', $event.target.value)">>
+            @keyup.stop="updateField('content', $event.target.value)">
           </v-text-field>
 
           <div v-if="post.image" class="imageWrapper">
@@ -47,10 +49,13 @@
           </image-uploader>
 
         </v-flex>
-        <v-alert secondary :value="showingAlert" transition="scale-transition">
-          Post Updated!
-        </v-alert>
+
       </v-card>
+
+        <v-alert secondary icon="check_circle" :value="showingAlert" transition="scale-transition">
+          Successful
+        </v-alert>
+
     </v-dialog>
   </v-layout>
 </template>
@@ -102,7 +107,7 @@ export default {
       this.$store.dispatch('updatePost', this.post)
     },
     deletePost (key) {
-      this.$store.dispatch('deletePost', key)
+      this.$store.dispatch('deletePost', this.post)
     },
     clearPost() {
       setTimeout(() => {
@@ -121,6 +126,12 @@ export default {
 </script>
 
 <style lang="scss">
+.dialog {
+  .toolbar__content {
+    // background: white;s
+    // color:
+  }
+}
 .imageWrapper {
   position: relative;
     display: flex;
@@ -151,9 +162,26 @@ export default {
 }
 .alert {
   max-width: 500px;
-text-align: center;
-font-size: 1.1em;
-display: block;
+  text-align: center;
+  font-size: 1.1em;
+  display: flex;
+  position: absolute !important;
+  justify-content: center;
+  bottom: 20px;
+  right: 20px;
+  left: 20px;
+  max-width: 100%;
+
+  @media (min-width: 600px) {
+    max-width: 400px;
+  }
+  &__icon {
+    color: white !important;
+    font-size: 1.5em !important;
+  }
+  div {
+    flex: none;
+  }
 }
 
 .dialog--fullscreen {

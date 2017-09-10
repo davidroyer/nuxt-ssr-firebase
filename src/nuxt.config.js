@@ -25,6 +25,7 @@ module.exports = {
       {
         rel: 'stylesheet',
         type: 'text/css',
+        aysnc: 'true',
         href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
       }
     ]
@@ -78,8 +79,7 @@ module.exports = {
     }]
   ],
   plugins: [
-    '~/plugins/vuetify.js',
-    // { src: '~/plugins/vue-picture-input', ssr: false }
+    '~/plugins/vuetify.js'
   ],
   css: [
     '~/assets/css/app.styl',

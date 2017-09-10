@@ -19,36 +19,44 @@ importScripts('workbox-sw.prod.v1.3.0.js');
  */
 const fileManifest = [
   {
-    "url": "/assets/app.e7f78a63b03ef8beee22.js",
-    "revision": "fb53e9445ef2fc1428af577a84bc1192"
+    "url": "/assets/app.15f4d526b5b69ded9af3.js",
+    "revision": "a30b61a64d394d5f24be2b859bf768a8"
   },
   {
     "url": "/assets/common.94bcc32b9dbf7bb21e009fcad05060bc.css",
     "revision": "bb6ee0a0caf9d1cdb6b844d77c09e31c"
   },
   {
-    "url": "/assets/common.f03fc83b0370b4f5c262.js",
-    "revision": "735682f36436d3a53d24801d002f3d9a"
+    "url": "/assets/common.fd79a99c74969b85974c.js",
+    "revision": "d82fbb8be8d192d7edcfcbbc55560c93"
   },
   {
-    "url": "/assets/layouts/default.fa89462ac537131991c5.js",
-    "revision": "abce69be9fdffffef1074b165947a4cf"
+    "url": "/assets/layouts/default.4bc03a583c378e154dd4.js",
+    "revision": "f0ee40f792ee23924ddef19ae8ea9d7e"
   },
   {
-    "url": "/assets/manifest.ad63f6a86dac537e73e9.js",
-    "revision": "31caa84b4a22163e96489ba26c041558"
+    "url": "/assets/manifest.dbc701b05d3bc4108685.js",
+    "revision": "2fcedc883b683a99a9027cb318501334"
   },
   {
-    "url": "/assets/pages/About.fed67c0ad5c05c5b5dbd.js",
-    "revision": "b345f1e74c641bff8a4fb01ef2dcddf2"
+    "url": "/assets/pages/About.7b5c44b5a4f4d411c948.js",
+    "revision": "643fc812dac766cc1fa274a019789a9c"
   },
   {
-    "url": "/assets/pages/Admin.7a05b6626ba30c67ce24.js",
-    "revision": "93e8133ad5bdad7930596be393cc87ac"
+    "url": "/assets/pages/Admin.a7a02b6b46fcb33bf90f.js",
+    "revision": "0b65e2550e1301d33ee0b6198efaf391"
   },
   {
-    "url": "/assets/pages/index.345ab8caeac79008ae3e.js",
-    "revision": "7d1223fe2e7882676c24f05944dda25c"
+    "url": "/assets/pages/Blog.c7a34143ab4dabcb2447.js",
+    "revision": "ae0cd88f99d57c284e0e797d4beb7723"
+  },
+  {
+    "url": "/assets/pages/index.7746e1c5fbac8f0bfe38.js",
+    "revision": "328023e7b239fe8848ec2a07a657dd2d"
+  },
+  {
+    "url": "/assets/pages/posts/_slug.e872a13215d269e33ba9.js",
+    "revision": "2fe2596b1a6abdd2866b8dd3adc6512f"
   }
 ];
 

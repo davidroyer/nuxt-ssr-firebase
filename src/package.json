@@ -44,6 +44,6 @@
     "precommit": "npm run lint",
     "copyassets": "yarn copydist && yarn copystatic",
     "copydist": "cpx '../prod/server/nuxt/dist/*' ../prod/client/assets -C",
-    "copystatic": "cpx ' ./static/*' ../prod/client -C"
+    "copystatic": "cpx ' ./static/*' ../prod/client"
   }
 }
