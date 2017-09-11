@@ -12,13 +12,6 @@ import Steps from '@/components/Steps'
 export default {
   components: {
     Steps
-  },
-  data() {
-    return {
-      isMounted: false
-    }
-  },
-  methods: {
   }
 }
 </script>

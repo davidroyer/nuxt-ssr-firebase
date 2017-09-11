@@ -1,14 +1,12 @@
-// const {projectId} = require('../../config.js');
-const projectId = 'nuxtssrfire'
-const bucketName = `${projectId}.appspot.com`;
+const ProjectID = 'nuxtssrfire'
+const bucketName = `${ProjectID}.appspot.com`;
 const functions = require("firebase-functions");
 const Admin = require('firebase-admin');
 Admin.initializeApp(functions.config().firebase);
-
-const { Nuxt } = require('nuxt')
 const app = require('express')()
 const cors = require('cors')
-const API_Routes = require('./apiRoutes')
+const { Nuxt } = require('nuxt')
+const Api = require('./api')
 require('es6-promise/auto');
 
 let config = {
@@ -18,6 +16,7 @@ let config = {
     publicPath: '/assets/'
   }
 }
+
 const nuxt = new Nuxt(config)
 
 function handleRequest(req, res) {
@@ -30,7 +29,7 @@ function handleRequest(req, res) {
 }
 
 app.use(cors({ origin: true }))
-app.use('/api', API_Routes)
+app.use('/api', Api)
 app.use(handleRequest)
 
 exports.render = functions.https.onRequest(app)

@@ -19,11 +19,9 @@ export default {
     posts () {
       return this.$store.state.posts
     }
-  },
-  methods: {
   }
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 </style>

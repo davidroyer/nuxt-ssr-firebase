@@ -1,8 +1,13 @@
+// @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 html {
   font-size: 16px;
 }
 div#app.activeEditor {
     overflow: hidden;
+}
+.application .theme--dark.toolbar {
+  z-index: 0 !important;
 }
 @import "transitions";
 @import "drawer";
