@@ -8,6 +8,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^4.0.0",
     "@nuxtjs/bulma": "^1.0.2",
+    "@nuxtjs/markdownit": "^1.1.2",
     "@nuxtjs/proxy": "^1.1.1",
     "@nuxtjs/pwa": "^0.2.0",
     "babel-plugin-module-resolver": "^2.7.1",
@@ -16,6 +17,7 @@
     "backpack-core": "^0.4.2",
     "es6-promise": "^4.1.1",
     "nuxt": "latest",
+    "prismjs": "^1.7.0",
     "vue-picture-input": "^1.13.2",
     "vuetify": "^0.14.8"
   },
@@ -31,6 +33,8 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "html-loader": "^0.5.1",
+    "markdown-with-front-matter-loader": "^0.1.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "stylus": "^0.54.5",

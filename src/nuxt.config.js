@@ -67,7 +67,11 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    ['@nuxtjs/markdownit', { html: true, linkify: true, breaks: true, highlight: (code, lang) => {
+        const Prism = require('prismjs')
+        return Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup)
+      } } ]
   ],
   axios: {
     baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api' : `https://${projectID}.firebaseapp.com/api`,
@@ -83,6 +87,7 @@ module.exports = {
   ],
   css: [
     '~/assets/css/app.styl',
-    '~/assets/css/main.scss'
+    '~/assets/css/main.scss',
+    'prismjs/themes/prism.css'
   ],
 }

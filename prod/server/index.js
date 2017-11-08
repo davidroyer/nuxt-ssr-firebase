@@ -1,5 +1,6 @@
-const ProjectID = 'nuxtssrfire'
-const bucketName = `${ProjectID}.appspot.com`;
+const ProjectConfig = require('./config.js')
+// const ProjectID = 'nuxtssrfire'
+const bucketName = `${ProjectConfig.ProjectID}.appspot.com`;
 const functions = require("firebase-functions");
 const Admin = require('firebase-admin');
 Admin.initializeApp(functions.config().firebase);
