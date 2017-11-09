@@ -16,7 +16,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "backpack-core": "^0.4.2",
     "es6-promise": "^4.1.1",
-    "nuxt": "latest",
+    "nuxt": "1.0.0-rc11",
     "prismjs": "^1.7.0",
     "vue-picture-input": "^1.13.2",
     "vuetify": "^0.14.8"

@@ -19,12 +19,12 @@ importScripts('workbox-sw.prod.v1.3.0.js');
  */
 const fileManifest = [
   {
-    "url": "/assets/app.26f80e0edeb833ee142c.js",
-    "revision": "f1917ff98bfc8b7958caaf751b29fd16"
+    "url": "/assets/app.ad2ad359e58ba6b9cd84.js",
+    "revision": "2537d63be17fb2bb886b6909d8746283"
   },
   {
-    "url": "/assets/common.a36b3cadd476be89cb7f3cf91765883f.css",
-    "revision": "4e97a7844a4d0912220bf89614d369c8"
+    "url": "/assets/common.cf4b735fa9a6d4362890e2cfe1a7b7ae.css",
+    "revision": "0ea02849c6b8ee9e7823fe4d44a1df6e"
   },
   {
     "url": "/assets/common.fd79a99c74969b85974c.js",
@@ -35,12 +35,12 @@ const fileManifest = [
     "revision": "f0ee40f792ee23924ddef19ae8ea9d7e"
   },
   {
-    "url": "/assets/manifest.c3bd527066db52fc3f80.js",
-    "revision": "c42417e05fa700426cc92330f8f6f858"
+    "url": "/assets/manifest.f4669ef67f45fcf122e6.js",
+    "revision": "fb02a4b1890ac22b7b9f23eb058d75d4"
   },
   {
-    "url": "/assets/pages/About.7b5c44b5a4f4d411c948.js",
-    "revision": "643fc812dac766cc1fa274a019789a9c"
+    "url": "/assets/pages/about.6800da1d1cab2111fa79.js",
+    "revision": "4b69e66c46b4787b0551463e0d63065d"
   },
   {
     "url": "/assets/pages/Admin.25156c1d44077006cdcb.js",
