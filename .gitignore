@@ -2,6 +2,11 @@
 
 prod/client/assets
 prod/server/nuxt/
+prod/client/css/
+prod/client/fonts/
+prod/client/img/
+prod/server/nuxt/
+prod/server/nuxt.config.js
 .firebaserc
 
 .DS_Store
@@ -12,6 +17,8 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+sw.*
 
 # Runtime data
 pids
