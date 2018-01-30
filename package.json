@@ -6,22 +6,22 @@
   "author": "David Royer",
   "repository": "https://github.com/davidroyer/nuxt-ssr-firebase",
   "scripts": {
-    "setup": "yarn setup:client && yarn setup:server && yarn build && yarn setup:firebase",
-    "setup:test": "yarn && yarn setup:client && yarn setup:server && yarn build && yarn setup:firebase",
-    "setup:client": "cd \"src\" && yarn",
-    "setup:server": "cd \"prod/server\" && yarn",
-    "setup:firebase": "mv .setup-firebaserc .firebaserc",
+    "setup": "yarn setup:client && yarn setup:server",
+    "setup:client": "cd \"src\" && yarn install",
+    "setup:server": "cd \"prod/server\" && yarn install",
+    "dev": "cd \"src\" && yarn dev",
+    "copyassets": "yarn copydist && yarn copystatic",
+    "copydist": "cp -R prod/server/nuxt/dist/ prod/client/assets",
+    "copystatic": "cp -R src/static/ prod/client",
+    "clean": "",
+    "build": "yarn build:nuxt && yarn copyassets",
+    "build:nuxt": "cd \"src\" && yarn build",
     "serve": "firebase serve --only functions,hosting",
-    "dev": "cross-env NODE_ENV=development yarn dev-ssr",
-    "dev-ssr": "yarn ssr & cd \"src\" && yarn nuxt",
-    "build": "cross-env NODE_ENV=production yarn build:client",
-    "build:client": "cd \"src\" && yarn nuxt build && yarn copyassets",
-    "generate": "cd \"src\" && yarn nuxt generate",
-    "deploy": "firebase deploy",
-    "assets": "cd \"src\" && yarn copyassets",
-    "ssr": "firebase serve --only functions"
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
-    "cross-env": "^5.0.5"
+    "cpx": "^1.5.0",
+    "cross-env": "^5.0.5",
+    "rimraf": "^2.6.2"
   }
 }

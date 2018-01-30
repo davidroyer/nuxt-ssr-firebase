@@ -1,30 +1,31 @@
 {
   "name": "firebase-functions-nuxt-example",
   "version": "1.0.0",
-  "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
-  "license": "MIT",
-  "author": "David Royer",
-  "repository": "https://github.com/jthegedus/firebase-functions-nuxt-example.git",
+  "description": "Nuxt.js project",
+  "author": "David East <droyer01@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "fix": "nuxt --fix",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
   "dependencies": {
-    "@nuxtjs/axios": "^4.0.0",
-    "@nuxtjs/bulma": "^1.0.2",
-    "@nuxtjs/markdownit": "^1.1.2",
-    "@nuxtjs/proxy": "^1.1.1",
-    "@nuxtjs/pwa": "^0.2.0",
+    "@firebase/app": "^0.1.1",
+    "@firebase/database": "^0.1.1",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "backpack-core": "^0.4.2",
-    "es6-promise": "^4.1.1",
-    "nuxt": "1.0.0-rc11",
-    "prismjs": "^1.7.0",
-    "vue-picture-input": "^1.13.2",
-    "vuetify": "^0.14.8"
+    "isomorphic-fetch": "^2.2.1",
+    "nuxt": "^1.0.0-rc11"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "cpx": "^1.5.0",
-    "es6-promise": "^4.1.1",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
@@ -33,22 +34,6 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "html-loader": "^0.5.1",
-    "markdown-with-front-matter-loader": "^0.1.0",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
-  },
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint",
-    "copyassets": "yarn copydist && yarn copystatic",
-    "copydist": "cpx '../prod/server/nuxt/dist/*' ../prod/client/assets -C",
-    "copystatic": "cpx ' ./static/*' ../prod/client"
+    "stylus": "^0.54.5"
   }
 }

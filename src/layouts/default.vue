@@ -1,138 +1,57 @@
 <template>
-  <v-app light toolbar footer :class="{ activeEditor: $store.state.postEditorIsActive }">
-    <template v-if="isMounted">
-      <v-navigation-drawer
-        persistent
-        enable-resize-watcher
-        v-model="drawer">
-        <v-list>
-          <v-list-tile
-            router
-            nuxt
-            v-for="(navItem, index) in navItems"
-            :key="index"
-            :to="navItem.to">
-            <v-list-tile-action>
-              <v-icon v-html="navItem.icon"></v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title v-text="navItem.title"></v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-        <v-spacer></v-spacer>
-        <v-btn id="githubLink" href="https://github.com/davidroyer/nuxt-ssr-firebase" target="_blank" secondary>
-          Github Repo
-          <v-icon right>code</v-icon>
-        </v-btn>
-      </v-navigation-drawer>
-    </template>
-
-    <v-toolbar fixed class="blue-grey darken-4" dark>
-      <v-btn icon @click.native.stop="drawer = !drawer">
-        <v-icon>menu</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="headerTitle"></v-toolbar-title>
-    </v-toolbar>
-
-    <main>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </main>
-    <v-footer class="blue-grey darken-4">
-      <span class="white--text">&copy; 2017</span>
-    </v-footer>
-  </v-app>
+  <div>
+    <nav>
+        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/page2">Page 2</nuxt-link>
+        <nuxt-link to="/page3">Page 3</nuxt-link>
+    </nav>
+    <nuxt/>
+  </div>
 </template>
-<script>
-export default {
-  components: {
-  },
-  data () {
-    return {
-      isMounted: false,
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      navItems: [
-        { icon: 'home', title: 'Welcome', to: '/' },
-        { icon: 'layers', title: 'About', to: '/about' },
-        { icon: 'person', title: 'Admin', to: '/admin' },
-        { icon: 'library_books', title: 'Blog', to: '/blog' }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'NuxtFire'
-    }
-  },
-  mounted () {
-    this.$vuetify.load(() => this.isMounted = true)
-  },
-  computed: {
-    headerTitle: function() {
-      return 'NuxtFire'
-      // let combinedTitle = `${this.title} - ${this.$route.name}`
-      // return this.$route.name === 'index' ? 'NuxtFire' : this.$route.name
-    }
-  }
-}
-</script>
 
-<style lang="scss">
-
-
-.list__tile__action .icon {
-  font-size: 28px;
-}
-@media (max-width: 700px) {
-  .container > .layout {
-    flex-direction: column;
-  }
-}
-@media (max-width: 1023px) {
-  .container {
-    min-width: 100% !important;
-    max-width: 100% !important;
-  }
+<style>
+html {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }
 
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0
-}
-.slide-fade-enter-active {
-  transition: all .35s ease;
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(-30px);
-  opacity: 0;
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.slideup-fade-enter-active {
-  transition: all .35s ease;
-}
-.slideup-fade-enter, .slideup-fade-leave-to
-/* .slideup-fade-leave-active below version 2.1.8 */ {
-  transform: translateY(-30px);
-  opacity: 0;
-}
-.toolbar--fixed {
-  /*z-index: 0;*/
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3b8070;
+  color: #3b8070;
+  text-decoration: none;
+  padding: 10px 30px;
 }
 
-#githubLink {
-  margin-left: auto;
-  color: white;
-  background: #263238!important;
+.button--green:hover {
+  color: #fff;
+  background-color: #3b8070;
 }
 
-#githubLink i {
-  color: white;
+.button--grey {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
+
+.button--grey:hover {
+  color: #fff;
+  background-color: #35495e;
 }
 </style>

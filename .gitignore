@@ -5,6 +5,8 @@ prod/server/nuxt/
 .firebaserc
 
 .DS_Store
+**/**/.DS_Store
+**/**/node_modules
 ProjectNotes.md
 # Logs
 logs

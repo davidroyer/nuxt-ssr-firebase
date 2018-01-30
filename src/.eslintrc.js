@@ -5,7 +5,6 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: 'standard',
   // required to lint *.vue files
   plugins: [
     'html'
