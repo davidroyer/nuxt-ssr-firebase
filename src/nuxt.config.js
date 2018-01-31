@@ -3,7 +3,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: 'first',
+    title: 'Nuxtjs SSR Firebase Functions',
     meta: [{
         charset: 'utf-8'
       },
@@ -17,26 +17,33 @@ module.exports = {
         content: 'Nuxt.js project'
       }
     ],
-    link: [
-      {
+    link: [{
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.muicss.com/mui-0.9.35/css/mui.min.css'
       }
-  ]
+    ]
   },
+
+// <script src="https://cdn.muicss.com/mui-0.9.35/js/mui.min.js"></script>
   /*
    ** Customize the progress bar color
    */
   loading: {
     color: '#3B8070'
   },
-  css: [
-    {
-      src: '@/assets/styles/main.css',
-      lang: 'css'
-    }
-  ],
+  css: [{
+    src: '@/assets/styles/main.css',
+    lang: 'css'
+  }],
   /*
    ** Build configuration
    */

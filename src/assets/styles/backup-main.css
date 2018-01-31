@@ -1,0 +1,150 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
+.bounce-enter-active {
+  animation: bounce-in .8s;
+}
+
+.bounce-leave-active {
+  animation: bounce-out .5s;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0)
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
+@keyframes bounce-out {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  100% {
+    transform: scale(0)
+  }
+}
+
+/* .slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(30px, 0);
+}
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-30px, 0);
+} */
+
+.page-enter-active, .page-leave-active {
+  transition: all .45s ease-in-out;
+  transition: all .45s cubic-bezier(.55, 0, .1, 1);
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0;
+  transform: translate(10px, 0);
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: all .3s ease;
+}
+
+.slide-enter, .slide-leave-active {
+  transform: translateX(230px);
+}
+
+.section {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#__nuxt {
+  padding: 1em;
+}
+
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+}
+
+nav a {
+  color: #404040;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.nuxt-link-exact-active {
+  font-weight: 700;
+  color: #35495e;
+  text-decoration: none;
+}
+
+/* From index.vue */
+
+.container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -4em;
+}
+
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* 1 */
+  display: block;
+  font-weight: 300;
+  font-size: 50px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 30px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+  width: 400px;
+margin-top: 1em;
+font-weight: 500;
+}
+
+.links {
+  padding-top: 15px;
+}
+
+.vertical-space {
+  margin: 2em 0;
+}
+
+span.render-result {
+  color: #3F51B5;
+  text-transform: capitalize;
+  font-size: 1.1em;
+}

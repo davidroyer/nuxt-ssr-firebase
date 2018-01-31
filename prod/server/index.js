@@ -18,6 +18,7 @@ const nuxt = new Nuxt(config);
 function handleRequest(req, res) {
   console.log('From nuxt.render', req);
   res.set('Cache-Control', 'public, max-age=150, s-maxage=150');
+
   return new Promise((resolve, reject) => {
     nuxt.render(req, res, promise => {
       promise.then(resolve).catch(reject)
