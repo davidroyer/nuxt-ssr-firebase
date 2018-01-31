@@ -1,26 +1,26 @@
 {
   "publicPath": "/assets/",
   "all": [
-    "app.69ca4861c784457d8c9f.js",
-    "pages/page3.b02e94c372d9e95d502b.js",
-    "pages/index.a12c8477ecd68f6d553f.js",
+    "app.4fe71c3e448bfdc8c500.js",
+    "pages/page3.d3a14251792e5b5f499b.js",
+    "pages/index.cb94a08cda68f07166f5.js",
     "layouts/default.6c6af203c549c963877b.js",
-    "vendor.b8445a2d00fe96384dd2.js",
+    "vendor.dfb8ae8da965d7f1a132.js",
     "pages/page2.ddcc9972e8b16224fc8e.js",
-    "manifest.e790fd382e75b83a9841.js",
+    "manifest.a91bb880fd8a591ca3fd.js",
     "app.7719562d20af3b00ee3f21b510e16e8c.css",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.e790fd382e75b83a9841.js",
-    "vendor.b8445a2d00fe96384dd2.js",
-    "app.69ca4861c784457d8c9f.js"
+    "manifest.a91bb880fd8a591ca3fd.js",
+    "vendor.dfb8ae8da965d7f1a132.js",
+    "app.4fe71c3e448bfdc8c500.js"
   ],
   "async": [
-    "pages/page3.b02e94c372d9e95d502b.js",
-    "pages/index.a12c8477ecd68f6d553f.js",
+    "pages/page3.d3a14251792e5b5f499b.js",
+    "pages/index.cb94a08cda68f07166f5.js",
     "layouts/default.6c6af203c549c963877b.js",
     "pages/page2.ddcc9972e8b16224fc8e.js"
   ],
@@ -33,6 +33,9 @@
     ],
     "d6e7c032": [
       4
+    ],
+    "77bc33bc": [
+      2
     ],
     "aca5fa7a": [
       4
@@ -277,9 +280,6 @@
       0,
       7
     ],
-    "0c8781d8": [
-      2
-    ],
     "04131516": [
       4
     ],
@@ -423,6 +423,13 @@
     "c012ce08": [
       4
     ],
+    "d93d7826": [
+      0,
+      7
+    ],
+    "51db8d35": [
+      4
+    ],
     "99dd6764": [
       4
     ],
@@ -485,9 +492,6 @@
     "546fc3b4": [
       4
     ],
-    "1f191cc2": [
-      2
-    ],
     "27fc65ad": [
       4
     ],
@@ -523,13 +527,6 @@
     "6f4542e9": [
       4
     ],
-    "30adc2b5": [
-      2
-    ],
-    "d93d7826": [
-      0,
-      7
-    ],
     "21bac13e": [
       0,
       7
@@ -548,9 +545,6 @@
     ],
     "1df7be45": [
       5
-    ],
-    "51db8d35": [
-      4
     ],
     "3d35c6ce": [
       4

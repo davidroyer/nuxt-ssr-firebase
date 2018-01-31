@@ -10,6 +10,7 @@
         @click="reloadPage">
         Reload Page
       </button>
+      <p>Using master branch</p>
     </div>
   </section>
 </template>
