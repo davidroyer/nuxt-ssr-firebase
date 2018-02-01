@@ -1,36 +1,36 @@
 {
   "publicPath": "/assets/",
   "all": [
-    "layouts/default.af42f8cc0557180538fa.js.map",
-    "layouts/default.af42f8cc0557180538fa.js",
-    "pages/page3.872f2471e06130b4931f.js",
-    "pages/page2.fcff8691a2f5c19c700b.js",
+    "layouts/default.519b93381240b7d1673c.js.map",
+    "layouts/default.519b93381240b7d1673c.js",
+    "pages/page3.9bec81290297cfd00adf.js",
+    "pages/page2.04e180a4cb0334f865ba.js",
     "common.c1d4db95c43fd503a449.js",
     "app.56e26cde9279648bf4e5.js",
-    "manifest.86c615919ca155e9ea00.js",
-    "common.1a9582b6ea6db6eb11155c56e5abc48f.css",
+    "manifest.e27e4fa45dcca3abf86b.js",
+    "common.cf5dd8ccbe9fdbf73a03c079fd3fb3de.css",
     "LICENSES",
-    "pages/index.d51e8f5d434265573676.js",
-    "pages/index.d51e8f5d434265573676.js.map",
-    "pages/page3.872f2471e06130b4931f.js.map",
-    "pages/page2.fcff8691a2f5c19c700b.js.map",
+    "pages/index.0a767cd47e782669f7e4.js",
+    "pages/index.0a767cd47e782669f7e4.js.map",
+    "pages/page3.9bec81290297cfd00adf.js.map",
+    "pages/page2.04e180a4cb0334f865ba.js.map",
     "common.c1d4db95c43fd503a449.js.map",
     "app.56e26cde9279648bf4e5.js.map",
-    "common.1a9582b6ea6db6eb11155c56e5abc48f.css.map",
-    "manifest.86c615919ca155e9ea00.js.map",
+    "common.cf5dd8ccbe9fdbf73a03c079fd3fb3de.css.map",
+    "manifest.e27e4fa45dcca3abf86b.js.map",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.86c615919ca155e9ea00.js",
+    "manifest.e27e4fa45dcca3abf86b.js",
     "common.c1d4db95c43fd503a449.js",
     "app.56e26cde9279648bf4e5.js"
   ],
   "async": [
-    "layouts/default.af42f8cc0557180538fa.js",
-    "pages/page3.872f2471e06130b4931f.js",
-    "pages/page2.fcff8691a2f5c19c700b.js",
-    "pages/index.d51e8f5d434265573676.js"
+    "layouts/default.519b93381240b7d1673c.js",
+    "pages/page3.9bec81290297cfd00adf.js",
+    "pages/page2.04e180a4cb0334f865ba.js",
+    "pages/index.0a767cd47e782669f7e4.js"
   ],
   "modules": {
     "11067752": [

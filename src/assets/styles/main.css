@@ -52,24 +52,32 @@ nav a:hover, nav a:focus {
 }
 
 div#content-wrapper {
-  margin-top: 1.5em;
-  padding-top: 2.25em;
+
+  margin: 1em 0;
+  padding: 1.5em .5em 2.5em .5em;
   display: flex;
   flex: 1;
 }
+@media (max-width: 699px) {
+  div#content-wrapper {
+    padding: 1em 0 8em 0;
+  }
+}
 
 span.render-result {
-  text-transform: uppercase;
-  /* color: #3F51B5; */
-  color: #2196F3;
+  text-transform: capitalize;
+  color: #424242;
   font-style: italic;
-  /* color: #222; */
-  font-weight: 700;
+  font-weight: 600;
   margin-left: .5em;
 }
 
+#content-wrapper .headline {
+  margin-top: 2em;
+}
+
 #reload-btn {
-  margin-top: 3.5em;
+  /* margin-top: 3.5em; */
 }
 
 @media (max-width: 849px) {

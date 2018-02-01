@@ -22,5 +22,4 @@ function handleRequest(req, res) {
 }
 
 app.use(handleRequest);
-
 exports.nuxtssr = functions.https.onRequest(app);

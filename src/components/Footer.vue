@@ -25,6 +25,12 @@
     padding: .5em 0;
     display: flex;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    z-index: 99;
   }
 
   .footer-flex-item {
