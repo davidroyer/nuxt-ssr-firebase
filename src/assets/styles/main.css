@@ -25,7 +25,6 @@ nav {
   justify-content: center;
 }
 
-
 nav a {
   color: #f9f9f9;
   font-weight: 400;
@@ -55,24 +54,23 @@ nav a:hover, nav a:focus {
 div#content-wrapper {
   margin-top: 1.5em;
   padding-top: 2.25em;
+  display: flex;
+  flex: 1;
 }
 
 span.render-result {
-    text-transform: uppercase;
-    /* color: #3F51B5; */
-    color: #2196F3;
-    font-style: italic;
-    /* color: #222; */
-    font-weight: 700;
-    margin-left: .5em;
+  text-transform: uppercase;
+  /* color: #3F51B5; */
+  color: #2196F3;
+  font-style: italic;
+  /* color: #222; */
+  font-weight: 700;
+  margin-left: .5em;
 }
-
 
 #reload-btn {
   margin-top: 3.5em;
 }
-
-
 
 @media (max-width: 849px) {
   nav {
@@ -80,6 +78,5 @@ span.render-result {
   }
   nav a {
     margin: 0 .5em;
-
   }
 }

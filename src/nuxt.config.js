@@ -50,9 +50,6 @@ module.exports = {
   buildDir: '../prod/server/nuxt',
   build: {
     publicPath: '/assets/',
-    vendor: [
-      'isomorphic-fetch',
-    ],
     extractCSS: true,
     babel: {
       presets: [

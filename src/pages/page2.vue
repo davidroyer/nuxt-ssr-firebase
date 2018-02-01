@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import fetch from 'isomorphic-fetch';
-
 export default {
   async asyncData () {
     return {
