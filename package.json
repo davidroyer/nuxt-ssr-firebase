@@ -6,12 +6,11 @@
   "author": "David Royer",
   "repository": "https://github.com/davidroyer/nuxt-ssr-firebase",
   "scripts": {
-    "postinstall": "yarn setup",
     "dev": "cd \"src\" && yarn dev",
     "build": "yarn build:nuxt && yarn clean && yarn copyassets",
     "serve": "firebase serve --only functions,hosting",
     "deploy": "firebase deploy",
-    "setup": "yarn setup:client && yarn setup:firebase && yarn setup:server",
+    "setup": "yarn install && yarn setup:client && yarn setup:firebase && yarn setup:server",
     "setup:client": "cd \"src\" && yarn install",
     "setup:server": "cd \"prod/server\" && yarn install",
     "setup:firebase": "mv .setup-firebaserc .firebaserc",
@@ -24,5 +23,8 @@
   "devDependencies": {
     "cross-env": "^5.0.5",
     "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "bulma": "^0.6.2"
   }
 }
