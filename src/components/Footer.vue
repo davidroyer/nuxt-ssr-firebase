@@ -2,9 +2,6 @@
   <footer>
     <div class="mui-container mui--text-center">
       <div class="footer-flex-item">
-        Updated fb-functions and fb-admin
-      </div>
-      <div class="footer-flex-item">
         Made by <a href="https://www.davidroyer.me" target="_blank">David Royer</a>
       </div>
       <div class="footer-flex-item">

@@ -3,24 +3,24 @@
   "all": [
     "app.4af136f357ff844f6f2e.js",
     "pages/page3.3a8020ebc604c7f0281b.js",
-    "layouts/default.09a79ccc2717c91e4566.js",
+    "layouts/default.2720a4e33032deea0344.js",
     "pages/index.aa94d51a1abbea58b49b.js",
     "vendor.def91941182befca8868.js",
     "pages/page2.dec818e4d34c134e0fd9.js",
-    "manifest.4d13fc681666b3ccae7e.js",
+    "manifest.c19e4391b11bead3ac94.js",
     "app.cf5dd8ccbe9fdbf73a03c079fd3fb3de.css",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.4d13fc681666b3ccae7e.js",
+    "manifest.c19e4391b11bead3ac94.js",
     "vendor.def91941182befca8868.js",
     "app.4af136f357ff844f6f2e.js"
   ],
   "async": [
     "pages/page3.3a8020ebc604c7f0281b.js",
-    "layouts/default.09a79ccc2717c91e4566.js",
+    "layouts/default.2720a4e33032deea0344.js",
     "pages/index.aa94d51a1abbea58b49b.js",
     "pages/page2.dec818e4d34c134e0fd9.js"
   ],
