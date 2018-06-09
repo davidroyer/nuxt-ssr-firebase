@@ -10,6 +10,7 @@
     "build": "yarn build:nuxt && yarn clean && yarn copyassets",
     "serve": "firebase serve --only functions,hosting",
     "deploy": "firebase deploy",
+    "predeploy": "yarn build",
     "setup": "yarn install && yarn setup:client && yarn setup:firebase && yarn setup:server",
     "setup:client": "cd \"src\" && yarn install",
     "setup:server": "cd \"prod/server\" && yarn install",
