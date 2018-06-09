@@ -40,11 +40,21 @@ module.exports = {
     color: '#3B8070'
   },
 
+  manifest: {
+    theme_color: '#3B8070'
+  },
+  /*
+  ** Modules
+  */
+  modules: [
+    '@nuxtjs/pwa'
+  ],
+
   /*
    ** Global CSS
    */
   css: ['~/assets/styles/main.css'],
-  buildDir: '../prod/server/nuxt',
+  buildDir: './../prod/server/nuxt',
   build: {
     publicPath: '/assets/',
     cache: true,
@@ -65,15 +75,6 @@ module.exports = {
         ]
       ]
     },
-    manifest: {
-      theme_color: '#3B8070'
-    },
-    /*
-    ** Modules
-    */
-    modules: [
-      '@nuxtjs/pwa'
-    ],
     /*
      ** Run ESLINT on save
      */

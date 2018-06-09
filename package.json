@@ -7,7 +7,7 @@
   "repository": "https://github.com/davidroyer/nuxt-ssr-firebase",
   "scripts": {
     "dev": "cd \"src\" && yarn dev",
-    "build": "yarn build:nuxt && yarn copyassets",
+    "build": "yarn build:nuxt && yarn clean && yarn copyassets",
     "serve": "NODE_ENV=development firebase serve",
     "deploy": "firebase deploy",
     "setup": "yarn install && yarn setup:client && yarn setup:firebase && yarn setup:server",
@@ -17,7 +17,7 @@
     "copyassets": "yarn copydist && yarn copystatic",
     "copydist": "cp -R prod/server/nuxt/dist/ prod/client/assets",
     "copystatic": "cp -R src/static/ prod/client",
-    "clean": "rimraf prod/client/assets/*",
+    "clean": "rimraf prod/client/assets/* && rimraf prod/client/*.*",
     "build:nuxt": "cd \"src\" && yarn build"
   },
   "devDependencies": {
