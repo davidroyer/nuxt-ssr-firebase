@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: 'footer'
+    name: 'AppHeader'
   }
 </script>
 

@@ -7,8 +7,8 @@
   "repository": "https://github.com/davidroyer/nuxt-ssr-firebase",
   "scripts": {
     "dev": "cd \"src\" && yarn dev",
-    "build": "yarn build:nuxt && yarn clean && yarn copyassets",
-    "serve": "firebase serve --only functions,hosting",
+    "build": "yarn build:nuxt && yarn copyassets",
+    "serve": "NODE_ENV=development firebase serve",
     "deploy": "firebase deploy",
     "setup": "yarn install && yarn setup:client && yarn setup:firebase && yarn setup:server",
     "setup:client": "cd \"src\" && yarn install",

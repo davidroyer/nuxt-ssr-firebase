@@ -1,9 +1,10 @@
 module.exports = {
+  debug: true,
   /*
    ** Headers of the page
    */
   head: {
-    title: 'Nuxtjs SSR Firebase Functions',
+    title: 'Nuxtjs SSR on Firebase Functions',
     meta: [{
         charset: 'utf-8'
       },
@@ -32,48 +33,58 @@ module.exports = {
       }
     ]
   },
-
-// <script src="https://cdn.muicss.com/mui-0.9.35/js/mui.min.js"></script>
   /*
    ** Customize the progress bar color
    */
   loading: {
     color: '#3B8070'
   },
-  css: [{
-    src: '@/assets/styles/main.css',
-    lang: 'css'
-  }],
+
   /*
-   ** Build configuration
+   ** Global CSS
    */
+  css: ['~/assets/styles/main.css'],
   buildDir: '../prod/server/nuxt',
   build: {
     publicPath: '/assets/',
-    extractCSS: true,
+    cache: true,
     babel: {
       presets: [
-        'es2015',
-        'stage-0'
-      ],
-      plugins: [
-        ["transform-runtime", {
-          "polyfill": true,
-          "regenerator": true
-        }],
+        [
+          'babel-preset-vue-app',
+          {
+            targets: process.server ?
+              {
+                node: '6.14.0'
+              } :
+              {
+                ie: 9,
+                uglify: true
+              }
+          }
+        ]
       ]
     },
+    manifest: {
+      theme_color: '#3B8070'
+    },
     /*
-     ** Run ESLint on save
+    ** Modules
+    */
+    modules: [
+      '@nuxtjs/pwa'
+    ],
+    /*
+     ** Run ESLINT on save
      */
     extend(config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        // config.module.rules.push({
-        //   enforce: 'pre',
-        //   test: /\.(js|vue)$/,
-        //   loader: 'eslint-loader',
-        //   exclude: /(node_modules)/
-        // })
+      if (process.browser) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
       }
     }
   }

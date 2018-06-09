@@ -2,7 +2,7 @@
   <section class="container">
     <div>
       <logo/>
-      <h1 class="mui--text-display1">Nuxt.js Firebase Functions</h1>
+      <h1 class="mui--text-display1">Nuxt2 - SSR - Firebase Functions</h1>
       <h2 class="headline">Rendered From:<span class="render-result">{{renderSource}}</span></h2>
       <button
         id="reload-btn"
