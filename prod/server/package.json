@@ -1,22 +1,15 @@
 {
   "name": "functions",
-  "description": "Nuxt-SSR-Firebase: Nuxt.js with Firebase Functions Production Setup",
+  "description":
+    "Nuxt-SSR-Firebase: Nuxt.js with Firebase Functions Production Setup",
   "dependencies": {
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-runtime": "^6.23.0",
-    "clone": "^2.1.1",
-    "debug": "^3.1.0",
-    "es6-promise": "^4.1.1",
-    "express": "^4.15.4",
-    "firebase-admin": "^5.12.1",
-    "firebase-functions": "^1.0.4",
-    "lodash": "^4.17.4",
-    "nuxt": "1.0.0-rc11",
-    "vue": "~2.4.2",
-    "vue-meta": "^1.2.0",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.0"
+    "express": "^4.15.3",
+    "firebase-admin": "~5.13.1",
+    "firebase-functions": "^2.0.0",
+    "nuxt": "^1.0.0"
+  },
+  "engines": {
+    "node": "8"
   },
   "private": true
 }
