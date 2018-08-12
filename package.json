@@ -14,15 +14,17 @@
     "setup": "yarn install && yarn setup:client && yarn setup:firebase && yarn setup:server",
     "setup:client": "cd \"src\" && yarn install",
     "setup:server": "cd \"prod/server\" && yarn install",
-    "setup:firebase": "mv .setup-firebaserc .firebaserc",
+    "setup:firebase": "rename .setup-firebaserc .firebaserc",
     "copyassets": "yarn copydist && yarn copystatic",
-    "copydist": "cp -R prod/server/nuxt/dist/ prod/client/assets",
-    "copystatic": "cp -R src/static/ prod/client",
+    "copydist": "cpx prod/server/nuxt/dist/* prod/client/assets",
+    "copystatic": "cpx src/static/* prod/client",
     "clean": "rimraf prod/client/assets/*",
     "build:nuxt": "cd \"src\" && yarn build"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "cross-env": "^5.0.5",
+    "rename": "^1.0.4",
     "rimraf": "^2.6.2"
   }
 }
